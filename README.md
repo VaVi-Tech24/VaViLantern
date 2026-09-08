@@ -76,7 +76,7 @@ Jump limits are 3 at levels 1–5, 4 at 6–10, 5 at 11–19, and 6 at 20–25. 
 ## Current delivery status
 
 - Solo and same-device multiplayer work in the browser and bundled Android app.
-- Static website output is ready, but the attempted Sites deployment failed. No public gameplay URL or registered custom domain is confirmed.
+- Play the published website at [vavilantern.com](https://vavilantern.com) or [www.vavilantern.com](https://www.vavilantern.com). HTTPS is active; solo and same-device multiplayer are available.
 - Optional Node invitation races and a seven-day board are implemented but not publicly hosted. Static hosting alone does not enable them.
 - No ads, purchases, cash rewards, player accounts or cross-device synchronization are implemented.
 - Art combines supplied references, generated bitmaps and Canvas drawing. This is a 2D game with shaded effects, not a native 3D engine.

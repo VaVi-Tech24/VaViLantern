@@ -6,7 +6,7 @@ Run `npm run build`; publish the contents of `dist/` to a static HTTPS host. `in
 
 Solo and same-device multiplayer need no API. Progress is stored under the website origin, so switching hostname creates a separate storage area. There is no service worker/installable-PWA cache in this version; Android is the packaged offline distribution.
 
-`.openai/hosting.json` retains the existing Sites project binding. The website source was saved, but publishing failed with a provider-side configuration conflict. Reuse the project when retrying; do not create a new one to hide the failure. No domain purchase or public gameplay address is confirmed. No deployment action is triggered merely by committing this repository.
+Published September 8, 2026: https://vavilantern.com and https://www.vavilantern.com. Both domains have active HTTPS. Cloudflare manages registration and DNS; Sites serves the static game. The fallback address is https://vavi-lantern.prashanth991.chatgpt.site. Reuse the existing `.openai/hosting.json` binding for updates. GitHub commits do not automatically deploy.
 
 After a domain is purchased, attach it to the selected host using that host's actual DNS verification/routing records. Configure both the root hostname and `www` as needed. Do not invent DNS targets; wait for the host's values and validate HTTPS after activation.
 

@@ -26,7 +26,7 @@ flowchart TB
     UI --> Audio
     UI <--> Storage
   end
-  subgraph Host[Website hosting: not live yet]
+  subgraph Host[Website hosting: Sites, live]
     CDN[HTTPS static files]
   end
   subgraph Service[Optional Node server: not deployed]
@@ -127,7 +127,7 @@ flowchart TB
   Tests --> WebBuild[npm run build]
   WebBuild --> Dist[dist: allowlisted public assets]
   Dist --> Static[Static HTTPS hosting]
-  DNS[Registered domain and DNS] -. Pending .-> Static
+  DNS[vavilantern.com: Cloudflare DNS + HTTPS] --> Static
   Source --> Gradle[Gradle, JDK 17 and Android SDK 36]
   Gradle --> APK[Debug-signed APK]
   Gradle --> AAB[Unsigned AAB]
