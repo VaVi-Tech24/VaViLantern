@@ -1,0 +1,1 @@
+Renames the stickman traveler to Pranay in selection and gameplay HUD. Keeps the supplied VaVi Tech logo in the header, removes the publisher subtitle under VaVi Lantern, and shows copyright 2026 VaVi Tech centered at the bottom of the home screen. No GitHub upload or website publication. Android versionCode 21.

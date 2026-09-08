@@ -1,4 +1,4 @@
-const E=require('../app/src/main/assets/engine.js');let failures=[];
+const E=require('../web/public/engine.js');let failures=[];
 for(const char of Object.keys(E.travelers))for(let level=1;level<=25;level++){
  const p=E.player(char,level),stage=E.level(level);
  for(let frame=0;frame<120*(stage.length/40+30)&&p.alive&&!p.completed;frame++){

@@ -1,0 +1,13 @@
+.git
+.gradle
+tools
+node_modules
+releases
+artifacts
+dist
+.local
+**/build
+server/scores.json*
+*.jks
+*.keystore
+.env*

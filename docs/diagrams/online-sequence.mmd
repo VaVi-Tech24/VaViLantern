@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant A as Player A
+  participant API as Node API
+  participant Room as Room memory
+  participant B as Player B
+  participant File as scores.json
+  A->>API: POST /rooms with name and level
+  API->>Room: Room, seed, Jonah player and random bearer token
+  API-->>A: Invitation code, token, index and snapshot
+  B->>API: POST /join with name and code
+  API->>Room: Second player; countdown of four seconds
+  API-->>B: Token, index and shared snapshot
+  loop Approximately every 100 ms
+    A->>API: POST /state with sequence, held sprint and actions
+    B->>API: POST /state with sequence, held sprint and actions
+    API->>Room: Accept newer sequence and bounded action queue
+    Note over API,Room: Independent 60 Hz tick advances both players
+    API-->>A: Both players and server timestamps
+    API-->>B: Both players and server timestamps
+  end
+  API->>File: Rank server results; write temp file and rename
+  A->>API: GET /leaderboard
+  API-->>A: Top 100 runs in the last seven days

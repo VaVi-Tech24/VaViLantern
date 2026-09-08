@@ -1,0 +1,1 @@
+Shifts the stationary sun and moon slightly right to the selected opening valley center, removing the previous 1.8% left offset. Height remains 26.5% of the viewport. Bold character names, clouds and gameplay remain unchanged. Android outputs are a debug-signed test APK and unsigned release bundle.

@@ -1,0 +1,16 @@
+flowchart LR
+  HTML[index.html: ordered scripts] --> E[engine.js]
+  HTML --> S[sound.js]
+  HTML --> C[characters.js]
+  HTML --> G[game.js]
+  HTML --> O[online.js]
+  Input[Pointer and keyboard events] --> G
+  RAF[requestAnimationFrame] --> G
+  G -->|jump, slide, sprint and fixed simulation steps| E
+  E -->|refill, death, completion and near miss| G
+  G --> S
+  E --> State[Player objects]
+  State --> Render[Background, bridge, runner, flame and HUD]
+  C --> Render
+  G -->|results, settings and unlocks| Storage[localStorage]
+  O -->|authoritative online snapshots| State

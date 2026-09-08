@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> menu
+  menu --> playing: Begin level
+  playing --> paused: Pause, blur or Android lifecycle
+  paused --> playing: Resume
+  paused --> menu: Exit
+  playing --> ending: Every runner has finished or died
+  ending --> results: Finish delay and water splash
+  results --> playing: Retry or next level
+  results --> menu: Return

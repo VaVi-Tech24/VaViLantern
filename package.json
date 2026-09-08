@@ -1,14 +1,15 @@
 {
   "name": "vavi-lantern",
-  "version": "0.3.9",
+  "version": "1.0.0",
   "private": true,
   "description": "VaVi Tech's serene bridge runner for Android",
   "scripts": {
     "start": "node server/server.cjs",
     "test": "node tests/campaign.test.cjs && node tests/ui-smoke.cjs && node tests/server.test.cjs && node tests/sound.test.cjs",
-    "build": "node scripts/build-web.cjs"
+    "build": "node scripts/build-web.cjs",
+    "test:playability": "node tests/playability.cjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

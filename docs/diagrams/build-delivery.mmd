@@ -1,0 +1,15 @@
+flowchart TB
+  Source[GitHub source] --> Tests[Mechanics, UI, sound and HTTP tests]
+  Tests --> WebBuild[npm run build]
+  WebBuild --> Dist[dist: allowlisted public assets]
+  Dist --> Static[Static HTTPS hosting]
+  DNS[Registered domain and DNS] -. Pending .-> Static
+  Source --> Gradle[Gradle, JDK 17 and Android SDK 36]
+  Gradle --> APK[Debug-signed APK]
+  Gradle --> AAB[Unsigned AAB]
+  APK --> Releases[Versioned GitHub release]
+  AAB --> Releases
+  AAB --> Signing[Owner upload key and Play App Signing]
+  Signing --> Play[Play Console tests and production]
+  Source --> Docker[Optional Node Docker image]
+  Docker --> Runtime[HTTPS proxy, single Node process and persistent volume]

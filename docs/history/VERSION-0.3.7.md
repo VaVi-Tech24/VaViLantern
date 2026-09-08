@@ -1,0 +1,1 @@
+Restores the previous cloud placement at 13%, 22% and 31% of screen height. Lowers the stationary sun and moon slightly, from 23.5% to 25% of screen height. Cloud artwork, scrolling, fireballs and gameplay remain unchanged. Android outputs are a debug-signed test APK and unsigned release bundle.

@@ -1,0 +1,3 @@
+5ba05334dd25ee6aaecacf22ba647dac9bb9e56dc8568829e8e721e5f6f0dbfa  VaVi-Lantern-1.0.0-test.apk
+3fccb8070d6459c9a630c83b9f8a4c4e2ccff630f770427d1d58c10a2aa578e5  VaVi-Lantern-1.0.0-unsigned.aab
+5708d7de338ff53b64eed4fc3d56d496f8d52b649d97ffbb3be04b283fdc9d26  VaVi-Lantern-1.0.0-website.zip

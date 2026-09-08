@@ -1,7 +1,7 @@
 // Optional authoritative multiplayer service. Node 18+ recommended; no npm dependencies.
 const http=require('http'),crypto=require('crypto'),fs=require('fs'),path=require('path');
-const E=require('../app/src/main/assets/engine.js');
-const PORT=Number(process.env.PORT||8787),ROOT=path.resolve(__dirname,'../app/src/main/assets');
+const E=require('../web/public/engine.js');
+const PORT=Number(process.env.PORT||8787),ROOT=path.resolve(__dirname,'../web/public');
 const dataFile=process.env.SCORE_FILE||path.join(__dirname,'scores.json');
 const origins=new Set(['https://appassets.androidplatform.net',`http://localhost:${PORT}`,`http://127.0.0.1:${PORT}`,...(process.env.ALLOWED_ORIGINS||'').split(',').filter(Boolean)]);
 const rooms=new Map(),sessions=new Map(),rates=new Map();let scores=[];

@@ -1,7 +1,7 @@
 (function(root){
  'use strict';
  const travelers={
-  stickman:{name:'Chikki',pace:56,sprint:112,burn:16,regen:11,description:'Balanced steps. A steady little flame.'},
+  stickman:{name:'Pranay',pace:56,sprint:112,burn:16,regen:11,description:'Balanced steps. A steady little flame.'},
   jonah:{name:'Jonah',pace:56,sprint:112,burn:15,regen:11,description:'Blue vest, brave heart. Your little adventurer.'},
   tortoise:{name:'Junnu',pace:47,sprint:95,burn:11,regen:12,description:'Patient steps. An economical flame.'},
   cheetah:{name:'Prem',pace:65,sprint:135,burn:23,regen:11,description:'The fastest sprint, with a thirstier flame.'},

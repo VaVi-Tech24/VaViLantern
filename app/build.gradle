@@ -1,0 +1,15 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.vavitech.lantern'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.vavitech.lantern'
+        minSdk 26
+        targetSdk 36
+        versionCode 23
+        versionName '1.0.0'
+    }
+    sourceSets { main { assets.srcDirs = ['../web/public'] } }
+    buildTypes { release { minifyEnabled false } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}

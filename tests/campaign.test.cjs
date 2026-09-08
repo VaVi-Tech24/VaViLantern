@@ -1,4 +1,4 @@
-const assert=require('assert').strict,E=require('../app/src/main/assets/engine.js');
+const assert=require('assert').strict,E=require('../web/public/engine.js');
 function test(name,fn){try{fn();console.log('PASS '+name);}catch(e){console.error('FAIL '+name,e);process.exitCode=1;}}
 function run(p,seconds){for(let i=0;i<seconds*120;i++)E.step(p,1/120,E.level(p.level).seed,i/120,()=>{});return p;}
 test('jump limits increase at levels 6, 11 and 20',()=>{for(const stage of E.levels){const limit=stage.id<=5?3:stage.id<=10?4:stage.id<=19?5:6;assert.equal(stage.maxJumps,limit);const p=E.player('jonah',stage.id);p.x=-1000;p.edge=-1230;for(let i=0;i<limit;i++)assert.ok(E.jump(p));assert.equal(E.jump(p),false);run(p,.8);assert.equal(p.jumps,0);assert.ok(E.jump(p));}});

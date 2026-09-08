@@ -1,0 +1,38 @@
+flowchart TB
+  User[Player: touch or keyboard]
+  subgraph Device[Player device]
+    Browser[Desktop or mobile browser]
+    Activity[Android MainActivity]
+    WebView[Android System WebView]
+    UI[HTML UI and Canvas scene]
+    Engine[Shared deterministic engine.js]
+    Audio[Web Audio synthesis]
+    Storage[(Origin-local localStorage)]
+    Assets[Packaged images and scripts]
+    User --> Browser
+    User --> Activity
+    Activity --> WebView
+    Browser --> UI
+    WebView --> UI
+    Assets --> UI
+    UI --> Engine
+    UI --> Audio
+    UI <--> Storage
+  end
+  subgraph Host[Website hosting: not live yet]
+    CDN[HTTPS static files]
+  end
+  subgraph Service[Optional Node server: not deployed]
+    API[HTTP routes and origin checks]
+    Tick[60 Hz authoritative simulation]
+    Shared[Same engine.js]
+    Rooms[(In-memory rooms and sessions)]
+    Scores[(Persistent scores.json)]
+    API <--> Rooms
+    Tick <--> Rooms
+    Tick --> Shared
+    Tick --> Scores
+    API --> Scores
+  end
+  CDN --> Browser
+  UI -. User-configured HTTPS polling .-> API
