@@ -1,0 +1,12 @@
+.gradle/
+**/build/
+local.properties
+*.jks
+*.keystore
+tools/
+node_modules/
+artifacts/
+releases/
+server/scores.json*
+dist/
+.site-deploy.tar.gz
