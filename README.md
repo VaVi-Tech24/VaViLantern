@@ -2,7 +2,7 @@
 
 A serene game by VaVi Tech: carry the last flame the world falls away behind you, find your pace keep the flame alive, finish the journey across 25 calm and relaxing levels.<br>
 
-<img src="docs/images/vavi-tech24-logo.jpg" alt="VaVi Tech24 green cosmic logo" width="280">
+                                <img src="docs/images/vavi-tech24-logo.jpg" alt="VaVi Tech24 green cosmic logo" width="280">
 
 Walk to restore your torch, sprint to escape the collapsing bridge, and time your jumps across 25 progressively longer levels. Choose Jonah, Junnu, Prem, Chinnu, Joel or Pranay. Play solo or share one device on two bridges.
 
