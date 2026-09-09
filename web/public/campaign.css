@@ -112,3 +112,8 @@ h1{font-size:clamp(58px,6.6vw,90px);letter-spacing:-4px}.panel{top:20%;width:380
 
 #menu .menuExtras{flex-direction:column;align-items:flex-start;gap:2px}#menu .menuExtras .networkButton{text-align:left}
 
+
+/* A quiet serif introduction that echoes the Lantern wordmark. */
+#menu .eyebrow{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:clamp(16px,1.6vw,21px);line-height:1.3;letter-spacing:.3px;gap:10px;text-transform:none;transform:translateX(-14px)}
+#menu .eyebrow .journeyBullet{flex:0 0 auto;width:auto;height:auto;background:none;border-radius:0;font-family:Arial,sans-serif;font-style:normal;font-size:18px;line-height:1;color:#718c63}
+@media(max-height:460px){#menu .eyebrow{font-size:16px}}
