@@ -4,6 +4,8 @@ Screenshots supplied by the project owner on September 8–9, 2026. These origin
 
 [Play VaVi Lantern](https://vavilantern.com/) · [Back to the project](../README.md) · [Desktop files](screenshots/2026-09-08/) · [Mobile files](screenshots/2026-09-09-mobile/)
 
+The desktop and portrait dawn home screenshots were refreshed on September 9, 2026 with the new “Serene and Relaxing Journey” tagline. Existing image paths are retained so README and gallery links remain stable.
+
 ## Portrait mobile screenshots
 
 Supplied September 9, 2026. Select an image to view its original resolution.
