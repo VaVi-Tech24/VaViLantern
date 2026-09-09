@@ -1,8 +1,22 @@
 # VaVi Lantern screenshot gallery
 
-Screenshots supplied by the project owner on September 8, 2026. These original PNG files are preserved without cropping or editing. They document the captured game state; future versions may look different.
+Screenshots supplied by the project owner on September 8–9, 2026. These original PNG and JPEG files are preserved without cropping or editing. They document the captured game state; future versions may look different.
 
-[Play VaVi Lantern](https://vavilantern.com/) · [Back to the project](../README.md) · [Browse all 11 files](screenshots/2026-09-08/)
+[Play VaVi Lantern](https://vavilantern.com/) · [Back to the project](../README.md) · [Desktop files](screenshots/2026-09-08/) · [Mobile files](screenshots/2026-09-09-mobile/)
+
+## Portrait mobile screenshots
+
+Supplied September 9, 2026. Select an image to view its original resolution.
+
+| Dawn home | Dusk home | Night home |
+|---|---|---|
+| [<img src="screenshots/2026-09-09-mobile/05-home-dawn.jpg" alt="Portrait mobile dawn home screen" width="240">](screenshots/2026-09-09-mobile/05-home-dawn.jpg) | [<img src="screenshots/2026-09-09-mobile/01-home-dusk.jpg" alt="Portrait mobile dusk home screen" width="240">](screenshots/2026-09-09-mobile/01-home-dusk.jpg) | [<img src="screenshots/2026-09-09-mobile/02-home-night.jpg" alt="Portrait mobile night home screen" width="240">](screenshots/2026-09-09-mobile/02-home-night.jpg) |
+
+| Choose a traveler | Jump and flame refill |
+|---|---|
+| [<img src="screenshots/2026-09-09-mobile/03-travelers.jpg" alt="Portrait mobile traveler selection" width="300">](screenshots/2026-09-09-mobile/03-travelers.jpg) | [<img src="screenshots/2026-09-09-mobile/04-jump-and-refill.jpg" alt="Jonah jumping toward a flame refill with mobile touch controls" width="300">](screenshots/2026-09-09-mobile/04-jump-and-refill.jpg) |
+
+The repeated [dawn clipboard capture](screenshots/2026-09-09-mobile/06-home-dawn-clipboard.jpg) is also preserved. The supplied [VaVi Tech24 logo](images/vavi-tech24-logo.jpg) appears below the opening description in the project README.
 
 ## Dawn home screen
 
