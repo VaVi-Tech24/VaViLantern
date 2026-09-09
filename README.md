@@ -1,9 +1,6 @@
 # VaVi Lantern
 
-A serene Android and web bridge runner by VaVi Tech: carry the last flame across 25 cinematic levels.<br>
-Shared game source, optional multiplayer service, detailed architecture, and versioned Android downloads.
-
-**Carry the last flame.** A calm bridge runner by **VaVi Tech**, for Android and the web. Current game: **1.0.0**; Android version code **23**.
+A serene game by VaVi Tech: carry the last flame the world falls away behind you, find your pace keep the flame alive, finish the journey across 25 calm and relaxing levels.<br>
 
 Walk to restore your torch, sprint to escape the collapsing bridge, and time your jumps across 25 progressively longer levels. Choose Jonah, Junnu, Prem, Chinnu, Joel or Pranay. Play solo or share one device on two bridges.
 
