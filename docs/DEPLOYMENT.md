@@ -8,7 +8,7 @@ Solo and same-device multiplayer need no API. Progress is stored under the websi
 
 Published September 8, 2026: https://vavilantern.com and https://www.vavilantern.com. Both domains have active HTTPS. Cloudflare manages registration and DNS; Sites serves the static game. The fallback address is https://vavi-lantern.prashanth991.chatgpt.site. Reuse the existing `.openai/hosting.json` binding for updates. GitHub commits do not automatically deploy.
 
-After a domain is purchased, attach it to the selected host using that host's actual DNS verification/routing records. Configure both the root hostname and `www` as needed. Do not invent DNS targets; wait for the host's values and validate HTTPS after activation.
+See [Cloudflare and ChatGPT Sites hosting](HOSTING.md) for live URLs, the seven DNS records, ownership boundaries, the publish/rollback procedure and troubleshooting. The configured A/CNAME records are DNS only in the owner's Cloudflare zone; HTTPS and application delivery are managed by Sites. No owner-managed Cloudflare Pages or Workers application is deployed. The optional API remains separate.
 
 ## Optional online server
 

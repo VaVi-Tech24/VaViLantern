@@ -27,7 +27,7 @@ flowchart TB
     UI <--> Storage
   end
   subgraph Host[Website hosting: Sites, live]
-    CDN[HTTPS static files]
+    CDN[Sites-managed HTTPS and static files]
   end
   subgraph Service[Optional Node server: not deployed]
     API[HTTP routes and origin checks]
@@ -46,6 +46,31 @@ flowchart TB
 ```
 
 Android intercepts requests to `https://appassets.androidplatform.net` and reads its packaged assets. A browser downloads identical assets from a static host or from the optional Node server. Website hosting, domain registration and online API hosting are separate services.
+
+## Live Cloudflare and ChatGPT Sites infrastructure
+
+Cloudflare Registrar and DNS are managed in the owner's account. ChatGPT Sites manages the live static deployment and custom-domain certificates. The apex, www and platform-provided address serve the same application. The owner's DNS records are DNS only; the Sites-managed Cloudflare delivery infrastructure is a separate service boundary, not a Worker or Pages project in the owner's account.
+```mermaid
+flowchart TB
+  subgraph Owner[Owner management]
+    CF[Cloudflare account: registrar and DNS]
+    Sites[ChatGPT Sites: VaVi Lantern]
+    GH[GitHub: source and releases]
+  end
+  Player[Desktop or mobile browser] -->|Resolve custom hostname| DNS[Cloudflare authoritative DNS]
+  CF --> DNS
+  DNS -->|Return Sites routing target| Player
+  Player -->|HTTPS: vavilantern.com or www| Host[Sites-managed hosting: TLS and static assets]
+  Alternate[Platform-provided chatgpt.site address] --> Host
+  Sites -->|Publish saved version and bind domains| Host
+  GH -->|Checkout and validate| Build[Local build: dist public assets]
+  Build -->|Push source, package and save version| Sites
+  Host -->|HTML, CSS, JavaScript and art| Game[Browser game: Canvas and Web Audio]
+  Game <--> Local[(Browser localStorage)]
+  Game -. Optional configured connection .-> API[Node API: not publicly deployed]
+```
+
+The static host serves twelve allowlisted website files plus deployment metadata. It does not run server/server.cjs or store player progress. Local gameplay executes on the device; localStorage is isolated per origin. DNS verification and HTTPS activation connect the custom domains to the saved deployment. Source pushes, saved Sites versions, production deployment and Android releases are distinct steps. See [Hosting operations](HOSTING.md) for DNS targets, dashboard links, update and rollback procedures, and renewal responsibilities.
 
 ## Client modules and game loop
 
@@ -126,8 +151,9 @@ flowchart TB
   Source[GitHub source] --> Tests[Mechanics, UI, sound and HTTP tests]
   Tests --> WebBuild[npm run build]
   WebBuild --> Dist[dist: allowlisted public assets]
-  Dist --> Static[Static HTTPS hosting]
-  DNS[vavilantern.com: Cloudflare DNS + HTTPS] --> Static
+  Dist --> Saved[Package and save Sites version]
+  Saved --> Static[Publish to ChatGPT Sites: static HTTPS]
+  DNS[vavilantern.com: Cloudflare DNS] --> Static
   Source --> Gradle[Gradle, JDK 17 and Android SDK 36]
   Gradle --> APK[Debug-signed APK]
   Gradle --> AAB[Unsigned AAB]
@@ -160,4 +186,4 @@ Android disables file/content access and cleartext traffic, blocks unrelated top
 
 ## Diagram source files
 
-Editable Mermaid sources: [system context](diagrams/system-context.mmd), [client runtime](diagrams/client-runtime.mmd), [screen states](diagrams/screen-states.mmd), [online sequence](diagrams/online-sequence.mmd), [build and delivery](diagrams/build-delivery.mmd). GitHub renders the diagrams above directly in this document.
+Editable Mermaid sources: [system context](diagrams/system-context.mmd), [client runtime](diagrams/client-runtime.mmd), [screen states](diagrams/screen-states.mmd), [online sequence](diagrams/online-sequence.mmd), [build and delivery](diagrams/build-delivery.mmd), [hosting infrastructure](diagrams/hosting-infrastructure.mmd). GitHub renders the diagrams above directly in this document.

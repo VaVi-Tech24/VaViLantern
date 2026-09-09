@@ -2,8 +2,9 @@ flowchart TB
   Source[GitHub source] --> Tests[Mechanics, UI, sound and HTTP tests]
   Tests --> WebBuild[npm run build]
   WebBuild --> Dist[dist: allowlisted public assets]
-  Dist --> Static[Static HTTPS hosting]
-  DNS[vavilantern.com: Cloudflare DNS + HTTPS] --> Static
+  Dist --> Saved[Package and save Sites version]
+  Saved --> Static[Publish to ChatGPT Sites: static HTTPS]
+  DNS[vavilantern.com: Cloudflare DNS] --> Static
   Source --> Gradle[Gradle, JDK 17 and Android SDK 36]
   Gradle --> APK[Debug-signed APK]
   Gradle --> AAB[Unsigned AAB]

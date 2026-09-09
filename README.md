@@ -7,6 +7,38 @@ Shared game source, optional multiplayer service, detailed architecture, and ver
 
 Walk to restore your torch, sprint to escape the collapsing bridge, and time your jumps across 25 progressively longer levels. Choose Jonah, Junnu, Prem, Chinnu, Joel or Pranay. Play solo or share one device on two bridges.
 
+## Technologies used
+
+| Layer | Technology / version | Purpose |
+|---|---|---|
+| Interface | HTML5 and CSS3 | Menus, HUD, dialogs, responsive touch controls |
+| Rendering | Canvas 2D | Bridge, parallax scenery, fireballs, water, flame and characters |
+| Game logic | Plain JavaScript | Shared deterministic rules and fixed 60 Hz runtime simulation |
+| Character art | PNG sprite atlas and Canvas geometry | Complete Jonah poses and procedural companions |
+| Sound | Web Audio API | Oscillators, noise, envelopes and lifecycle-aware effects |
+| Local persistence | Web Storage localStorage | Device/origin-specific settings, levels and records |
+| Android shell | Java 17 and Android System WebView | Packaged web game, virtual HTTPS assets and lifecycle |
+| Android package | com.vavitech.lantern | App identifier; API 26 minimum, SDK 36 target/compile |
+| Android build | Gradle 8.13 and AGP 8.13.2 | Debug APK and unsigned release AAB |
+| Server | Node.js 22 LTS, built-in HTTP/crypto/fs | Optional rooms, authoritative simulation and static files |
+| Networking | JSON over HTTP(S), polling around 10 Hz | Input updates and server snapshots |
+| Server storage | JSON file, temporary write plus rename | Single-process top-run persistence |
+| Container | node:22-alpine, non-root user | Optional API deployment with mounted data directory |
+| Testing | Node assert/vm and local HTTP | Mechanics, UI smoke, audio lifecycle and API checks |
+| Website build | Node file-copy allowlist | Creates a portable static dist directory |
+| Source/distribution | Git and GitHub Releases | Organization repository and versioned binaries |
+| Domain ownership | Cloudflare Registrar | Registers and renews vavilantern.com |
+| Domain routing | Cloudflare authoritative DNS, A/CNAME/TXT | DNS-only routing and domain verification for apex and www |
+| Public website hosting | ChatGPT Sites | Saved versions, static deployment and custom-domain HTTPS |
+| Hosted delivery | Sites-managed Cloudflare infrastructure | TLS and delivery of public game assets; separate from the owner's DNS zone |
+| Architecture docs | Mermaid in Markdown and .mmd sources | GitHub-rendered context, sequence, state and delivery diagrams |
+
+The client and optional server use no npm runtime dependencies. Rendering is Canvas 2D; React, Unity, Unreal and Firebase are not used. [Technology details](docs/TECHNOLOGIES.md) · [Cloudflare and ChatGPT Sites hosting](docs/HOSTING.md).
+
+## Live game and hosting
+
+Play at [vavilantern.com](https://vavilantern.com), [www.vavilantern.com](https://www.vavilantern.com), or the [ChatGPT Sites address](https://vavi-lantern.prashanth991.chatgpt.site). Cloudflare manages the domain and DNS; ChatGPT Sites serves the same game at all three addresses. Manage the hosted game in [ChatGPT Sites](https://chatgpt.com/sites). Progress is local to each browser and hostname.
+
 ## Run and build
 
 Use Node.js 22 LTS for development. The game and optional Node service have no npm runtime dependencies.
@@ -67,6 +99,7 @@ Jump limits are 3 at levels 1–5, 4 at 6–10, 5 at 11–19, and 6 at 20–25. 
 | [Game design](docs/GAME-DESIGN.md) | Campaign, physics, scoring and characters |
 | [Development and skills](docs/DEVELOPMENT.md) | Setup, engineering skills, workflows and validation |
 | [API](docs/API.md) | Online routes, sessions, data and limits |
+| [Cloudflare and ChatGPT Sites](docs/HOSTING.md) | Live addresses, hosting ownership, DNS, HTTPS, publishing, rollback and troubleshooting |
 | [Deployment](docs/DEPLOYMENT.md) | Website, optional server and Android distribution |
 | [Releases](docs/RELEASES.md) | Latest binaries, checksums and version policy |
 | [Play Store preparation](docs/PUBLISHING.md) | Signing, listing and submission guide |

@@ -20,7 +20,7 @@ flowchart TB
     UI <--> Storage
   end
   subgraph Host[Website hosting: Sites, live]
-    CDN[HTTPS static files]
+    CDN[Sites-managed HTTPS and static files]
   end
   subgraph Service[Optional Node server: not deployed]
     API[HTTP routes and origin checks]

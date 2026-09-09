@@ -1,0 +1,17 @@
+flowchart TB
+  subgraph Owner[Owner management]
+    CF[Cloudflare account: registrar and DNS]
+    Sites[ChatGPT Sites: VaVi Lantern]
+    GH[GitHub: source and releases]
+  end
+  Player[Desktop or mobile browser] -->|Resolve custom hostname| DNS[Cloudflare authoritative DNS]
+  CF --> DNS
+  DNS -->|Return Sites routing target| Player
+  Player -->|HTTPS: vavilantern.com or www| Host[Sites-managed hosting: TLS and static assets]
+  Alternate[Platform-provided chatgpt.site address] --> Host
+  Sites -->|Publish saved version and bind domains| Host
+  GH -->|Checkout and validate| Build[Local build: dist public assets]
+  Build -->|Push source, package and save version| Sites
+  Host -->|HTML, CSS, JavaScript and art| Game[Browser game: Canvas and Web Audio]
+  Game <--> Local[(Browser localStorage)]
+  Game -. Optional configured connection .-> API[Node API: not publicly deployed]
