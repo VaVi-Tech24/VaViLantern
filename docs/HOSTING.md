@@ -68,6 +68,19 @@ All records were imported with a five-minute TTL. A and CNAME records use DNS-on
 
 The exact TXT values remain in Cloudflare DNS. Preserve the validation records; obtain fresh instructions from Sites if reattaching a domain. Do not substitute a CNAME pointing to the public game URL or toggle proxy mode as a speculative fix. Both custom domains reached active routing and active SSL status, and the game loaded over HTTPS.
 
+## HTTPS certificates
+
+Verified September 9, 2026 at 00:25 UTC (September 8 in Toronto): Sites reported active domain routing and active SSL status for both addresses.
+
+| Hostname | Domain status | Certificate status |
+|---|---|---|
+| vavilantern.com | Active | Active |
+| www.vavilantern.com | Active | Active |
+
+HTTPS encrypts traffic between the visitor's browser and the website host. Certificate provisioning is handled by the Sites-managed hosting integration; the owner does not need to purchase or manually install a certificate for this deployment. Keep the custom domains attached and preserve their DNS verification records.
+
+This is a dated status check, not a guarantee of future availability. The status response did not include certificate issuer or expiry details. For future checks, inspect the browser's certificate information and the Sites custom-domain SSL status. Certificate setup does not provide player accounts, cloud saves or a hosted multiplayer API.
+
 ## What was uploaded
 
 The deployment contains twelve public files plus hosting metadata: index.html, style.css, campaign.css, engine.js, game.js, characters.js, sound.js, online.js, cosmic-lantern.png, vavi-tech-logo.png, jonah-run.png and logo.svg. The build script explicitly allowlists these files. Android binaries, private signing keys, local tools, tests and the Node server are not in the static deployment.

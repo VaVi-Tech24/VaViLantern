@@ -39,6 +39,8 @@ The client and optional server use no npm runtime dependencies. Rendering is Can
 
 Play at [vavilantern.com](https://vavilantern.com), [www.vavilantern.com](https://www.vavilantern.com), or the [ChatGPT Sites address](https://vavi-lantern.prashanth991.chatgpt.site). Cloudflare manages the domain and DNS; ChatGPT Sites serves the same game at all three addresses. Manage the hosted game in [ChatGPT Sites](https://chatgpt.com/sites). Progress is local to each browser and hostname.
 
+**HTTPS certificates:** Both custom domains have active SSL certificates, verified September 9, 2026 at 00:25 UTC. Sites manages certificate provisioning; no separate certificate purchase or manual installation is needed. See [certificate status and management](docs/HOSTING.md#https-certificates).
+
 ## Run and build
 
 Use Node.js 22 LTS for development. The game and optional Node service have no npm runtime dependencies.
