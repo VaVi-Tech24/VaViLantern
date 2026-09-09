@@ -34,3 +34,81 @@ h1{font-size:clamp(58px,6.6vw,90px);letter-spacing:-4px}.panel{top:20%;width:380
 .controlset button:active{background:transparent;border-color:#fff0bd;transform:translateY(2px) scale(.97)}
 @media(max-height:600px){.controlIcon{width:47px;height:47px}.controlset button{min-height:54px;padding:2px 12px}.controlset .jumpCount{margin-top:7px}}
 @media(prefers-reduced-motion:reduce){.controlset button{transition:none}}
+
+/* Keep the full home menu above the footer on desktop. */
+#menu h1 span,#menu h1 em{white-space:nowrap}
+#footer #skies{margin-left:auto}
+@media(min-width:700px){
+ #menu.panel{top:clamp(96px,16vh,145px);width:clamp(380px,40vw,480px);max-height:calc(100dvh - clamp(96px,16vh,145px) - 70px);padding:2px 8px 8px 0}
+ #menu h1{font-size:clamp(44px,min(5.4vw,9vh),70px);line-height:1.03;letter-spacing:-2.5px;margin:20px 0 24px}
+ #menu .intro{display:block;font-size:13px;line-height:1.75;margin:0 0 24px}
+ #menu .journeyReward{display:inline-block;margin-top:10px}
+ #menu .modes{margin-bottom:16px}
+ #menu .levelSummary{margin:12px 0}
+ #menu .primary{padding:14px 20px}
+ #menu .subactions{margin-top:14px}
+ #menu .networkButton{margin:12px 0 0}
+}
+@media(min-width:700px) and (max-height:620px){
+ #menu.panel{top:86px;max-height:calc(100dvh - 142px)}
+ #menu h1{font-size:42px;margin:14px 0 18px}
+ #menu .intro{font-size:12px;line-height:1.6;margin-bottom:16px}
+ #menu .primary{padding:11px 16px}
+ #menu .subactions button{padding:7px 0}
+}
+@media(min-width:700px) and (max-height:460px){
+ #menu.panel{top:76px;left:6%;width:88%;max-height:calc(100dvh - 126px);display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-content:start}
+ #menu .eyebrow,#menu h1,#menu .intro{grid-column:1}
+ #menu h1{font-size:40px;margin:14px 0 18px}
+ #menu .intro{grid-row:3 / span 3}
+ #menu .modes{grid-column:2;grid-row:1 / span 2;align-self:start}
+ #menu .levelSummary{grid-column:2;grid-row:3;margin:0 0 8px}
+ #menu .primary{grid-column:2;grid-row:4}
+ #menu .subactions{grid-column:2;grid-row:5}
+ #menu .networkButton{grid-column:2;grid-row:6}
+}
+
+@media(max-width:699px){#menu h1{font-size:56px;margin:22px 0 24px}#menu .intro{margin-bottom:24px}#menu .journeyReward{display:inline-block;margin-top:9px}#menu .modes{margin-bottom:16px}#menu .subactions{margin-top:16px}#menu .networkButton{margin-top:12px}}
+
+/* Give the opening eyebrow its own breathing room. */
+#menu .eyebrow{margin-bottom:0;padding-bottom:0}
+@media(min-width:700px) and (max-height:460px){#menu .eyebrow{margin-bottom:0;padding-bottom:0}}
+
+/* Move the complete introduction, including its eyebrow, down together. */
+@media(min-width:700px) and (min-height:621px){#menu.panel{top:calc(clamp(96px,16vh,145px) + 32px);max-height:calc(100dvh - clamp(96px,16vh,145px) - 102px)}}
+@media(min-width:700px) and (min-height:461px) and (max-height:620px){#menu.panel{top:110px;max-height:calc(100dvh - 166px)}}
+@media(min-width:700px) and (max-height:460px){#menu.panel{top:84px;max-height:calc(100dvh - 134px)}}
+@media(max-width:699px){#menu.panel{top:calc(17% + 24px);max-height:calc(83dvh - 90px)}}
+
+/* A single-line title and aligned, deliberately separated supporting copy. */
+#menu h1{white-space:nowrap;font-size:clamp(30px,3.6vw,46px);line-height:1.15;letter-spacing:-1.5px;margin:22px 0 24px}
+#menu .intro{text-align:left;line-height:1.8}
+#menu .introLead{display:block}
+#menu .journeyReward{display:block;max-width:42ch;margin-top:14px;line-height:1.65}
+@media(max-width:699px){#menu h1{font-size:clamp(26px,8.1vw,46px);letter-spacing:-1px;margin:22px 0}#menu .journeyReward{margin-top:14px}}
+@media(min-width:700px) and (max-height:460px){#menu h1{font-size:clamp(26px,3.5vw,38px);letter-spacing:-1px;margin:14px 0 18px}#menu .journeyReward{margin-top:10px}}
+
+@media(max-width:699px) and (max-height:700px){#menu h1{margin:16px 0}#menu .intro{font-size:12px;line-height:1.65;margin-bottom:16px}#menu .journeyReward{margin-top:10px}#menu .modes{margin-bottom:10px}#menu .subactions{margin-top:8px}#menu .networkButton{margin-top:6px}}
+
+/* Bring the start action up and align secondary navigation in two tidy rows. */
+#menu .modes{margin-bottom:8px}
+#menu .levelSummary{margin:6px 0 8px}
+#menu .subactions{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+#menu .subactions button{text-align:left}
+#menu .subactions button:last-child{text-align:right}
+#menu .menuExtras{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:10px}
+#menu .menuExtras button{padding:9px 0;font-size:11px;font-weight:600;color:#3e5b4f;white-space:nowrap}
+#menu .menuExtras .networkButton{order:-1;margin:0}
+#menu .menuExtras #records{text-align:right}
+#menu .menuExtras #records span{margin-left:5px}
+.night #menu .menuExtras button{color:#d4decc}
+@media(min-width:700px) and (max-height:460px){#menu .menuExtras{grid-column:2;grid-row:6;margin-top:4px}#menu .menuExtras button{font-size:10px}}
+
+#menu .subactions{display:flex;justify-content:flex-start;align-items:center;gap:32px}#menu .subactions button:last-child{text-align:left}
+@media(max-width:699px){#menu .subactions{gap:26px}}
+
+#menu .menuExtras{justify-content:flex-start;gap:32px}#menu .menuExtras #records{text-align:left}#menu .menuExtras .networkButton{order:0}
+@media(max-width:699px){#menu .menuExtras{gap:26px}}
+
+#menu .menuExtras{flex-direction:column;align-items:flex-start;gap:2px}#menu .menuExtras .networkButton{text-align:left}
+
