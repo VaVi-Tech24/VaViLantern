@@ -7,6 +7,12 @@ Shared game source, optional multiplayer service, detailed architecture, and ver
 
 Walk to restore your torch, sprint to escape the collapsing bridge, and time your jumps across 25 progressively longer levels. Choose Jonah, Junnu, Prem, Chinnu, Joel or Pranay. Play solo or share one device on two bridges.
 
+## Screenshots
+
+![VaVi Lantern dawn home screen](docs/screenshots/2026-09-08/01-home-dawn.png)
+
+[View the screenshot gallery](docs/SCREENSHOTS.md) for travelers, level selection, collapsing bridges, the finish gateway, and dusk and night scenery. Captured September 8, 2026.
+
 ## Technologies used
 
 | Layer | Technology / version | Purpose |
