@@ -72,6 +72,10 @@ flowchart TB
 
 The static host serves twelve allowlisted website files plus deployment metadata. It does not run server/server.cjs or store player progress. Local gameplay executes on the device; localStorage is isolated per origin. DNS verification and HTTPS activation connect the custom domains to the saved deployment. Source pushes, saved Sites versions, production deployment and Android releases are distinct steps. See [Hosting operations](HOSTING.md) for DNS targets, dashboard links, update and rollback procedures, and renewal responsibilities.
 
+## Detailed domain and script flows
+
+The [domain-routing guide](DOMAIN-ROUTING.md) expands the hosting boundary into three diagrams: [custom-domain configuration](DOMAIN-ROUTING.md#where-the-configuration-was-made), [DNS and HTTPS request routing](DOMAIN-ROUTING.md#why-the-browser-still-knows-the-domain-after-dns), and [script delivery and execution](DOMAIN-ROUTING.md#where-the-scripts-live-and-where-they-run). Cloudflare owns the network IPs supplied by Sites; Sites manages the domain-to-deployment association. The browser preserves the hostname after DNS and executes the downloaded game locally. Exact internal asset storage is not established by the deployment metadata.
+
 ## Client modules and game loop
 
 ```mermaid

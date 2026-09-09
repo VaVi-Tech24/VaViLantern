@@ -35,6 +35,10 @@ Walk to restore your torch, sprint to escape the collapsing bridge, and time you
 
 The client and optional server use no npm runtime dependencies. Rendering is Canvas 2D; React, Unity, Unreal and Firebase are not used. [Technology details](docs/TECHNOLOGIES.md) · [Cloudflare and ChatGPT Sites hosting](docs/HOSTING.md).
 
+## How your domain reaches the game
+
+[Domain routing explained](docs/DOMAIN-ROUTING.md) covers who owns the Cloudflare IP addresses, how Sites supplied the A-record targets, where the hostname mapping was configured, how DNS/TLS/HTTP select the game, and where scripts are stored and executed. Includes three step-by-step diagrams.
+
 ## Live game and hosting
 
 Play at [vavilantern.com](https://vavilantern.com), [www.vavilantern.com](https://www.vavilantern.com), or the [ChatGPT Sites address](https://vavi-lantern.prashanth991.chatgpt.site). Cloudflare manages the domain and DNS; ChatGPT Sites serves the same game at all three addresses. Manage the hosted game in [ChatGPT Sites](https://chatgpt.com/sites). Progress is local to each browser and hostname.

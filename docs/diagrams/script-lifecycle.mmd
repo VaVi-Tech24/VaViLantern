@@ -1,0 +1,10 @@
+flowchart LR
+  Local[Local source: web/public] -->|Commit and push| GH[GitHub repository]
+  Local -->|npm run build| Dist[dist: allowlisted website files]
+  Dist -->|Package, save version and publish| Sites[ChatGPT Sites-managed deployment]
+  Sites --> Delivery[Cloudflare-backed hosting delivery]
+  Delivery -->|Download over HTTPS| Browser[Player browser: JavaScript execution]
+  Browser <--> Save[(Origin-local localStorage)]
+  Local -->|Gradle packages shared assets| APK[Android APK]
+  APK --> WV[Android WebView: JavaScript execution]
+  Server[Optional Node server source] -. Separate future deployment .-> API[Online race API]

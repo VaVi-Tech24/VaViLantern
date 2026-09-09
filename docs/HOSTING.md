@@ -14,6 +14,10 @@ Deployment verified September 8, 2026. Game version: **1.0.0**.
 
 All three game addresses serve the same release. The custom domains do not redirect through the platform address. Each hostname is a separate browser origin: progress, settings and records stored in localStorage do not automatically transfer between them. Share the main address consistently.
 
+## Domain routing explained
+
+See [how the domain reaches the game](DOMAIN-ROUTING.md) for IP ownership versus Sites hosting management, the two configuration locations, TLS and HTTP hostname routing, DNS-only behavior, and script delivery/execution. It includes separate diagrams for custom-domain setup, a visitor request and the script lifecycle.
+
 ## Responsibilities and ownership
 
 | Component | Managed where | Current responsibility |

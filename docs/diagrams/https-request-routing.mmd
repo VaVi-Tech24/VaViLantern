@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant B as Player's browser
+  participant R as DNS resolver
+  participant D as Cloudflare authoritative DNS
+  participant H as Sites-managed Cloudflare hosting endpoint
+  participant A as VaVi Lantern published assets
+  B->>R: Resolve vavilantern.com
+  opt Resolver has no usable cached answer
+    R->>D: Query A records
+    D-->>R: 162.159.143.30 and 172.66.3.26
+  end
+  R-->>B: Return destination addresses
+  B->>H: Connect to returned IP on port 443
+  B->>H: TLS handshake for vavilantern.com
+  H-->>B: Certificate and secure connection
+  B->>H: GET / with hostname vavilantern.com
+  H->>H: Match hostname to the Sites deployment
+  H->>A: Select index.html for this deployment
+  A-->>H: Published file
+  H-->>B: HTTPS response with HTML
+  B->>H: Request JavaScript, CSS and image paths using the same hostname
+  H-->>B: Return game assets
+  B->>B: Execute JavaScript, draw frames and synthesize sound

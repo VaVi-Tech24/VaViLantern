@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant O as Owner or authorized deployment agent
+  participant S as ChatGPT Sites
+  participant H as Sites-managed Cloudflare hosting integration
+  participant D as Owner's Cloudflare DNS zone
+  O->>S: Attach apex and www to VaVi Lantern
+  S->>H: Associate custom hostnames with the deployment
+  S-->>O: Return A targets, www CNAME target and TXT verification records
+  O->>D: Save the supplied DNS records
+  H->>D: Validate domain ownership and routing
+  H->>H: Provision HTTPS and activate hostname routing
+  S-->>O: Report active domain and SSL status
