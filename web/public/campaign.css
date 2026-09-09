@@ -21,3 +21,16 @@ h1{font-size:clamp(58px,6.6vw,90px);letter-spacing:-4px}.panel{top:20%;width:380
 #brand img{object-fit:contain;border-radius:9px;width:56px;height:56px}@media(max-width:699px){#brand img{width:42px;height:42px}}@media(max-height:600px) and (min-width:700px){#brand img{width:38px;height:38px}}
 #footer{flex-wrap:nowrap}#footer .copyright{display:block;position:absolute;left:50%;transform:translateX(-50%);text-align:center;font:12px Georgia,serif;letter-spacing:1px;white-space:nowrap}@media(max-width:699px){#footer>span:first-child{display:none}#footer .copyright{position:static;transform:none;order:-1;font-size:10px}#footer{gap:12px}}
 #footer .copyrightYear{font-family:Arial,sans-serif;font-size:.9em;font-weight:400;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.5px}
+
+/* Shared touch symbols retain accessible action names and generous hit targets. */
+.controlset button{display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .12s ease,background-color .12s ease}
+.controlIcon{display:block;width:64px;height:64px;opacity:.3;pointer-events:none;filter:drop-shadow(0 2px 2px #233d2918)}
+.controlset button{padding:3px 13px;min-height:72px;border:1.5px solid #e7efdbb3;border-radius:999px;background:transparent;box-shadow:0 0 0 1px #294c3940;backdrop-filter:none}
+.controlset .sprint{background:transparent}
+.night .controlset button{background:transparent;border-color:#d9e9d5bf}
+.controlset .jumpCount{margin-top:12px}
+.controlPlayer,.jumpCount{font:600 11px/1 Arial,sans-serif;pointer-events:none}
+.jumpCount{align-self:flex-start;margin-top:3px;opacity:.8}
+.controlset button:active{background:transparent;border-color:#fff0bd;transform:translateY(2px) scale(.97)}
+@media(max-height:600px){.controlIcon{width:47px;height:47px}.controlset button{min-height:54px;padding:2px 12px}.controlset .jumpCount{margin-top:7px}}
+@media(prefers-reduced-motion:reduce){.controlset button{transition:none}}

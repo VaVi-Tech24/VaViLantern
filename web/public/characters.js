@@ -1,11 +1,11 @@
-const jonahSheet=new Image();jonahSheet.onload=()=>paintPortraits();jonahSheet.src='jonah-run.png';
-function drawAvatar(c,x,y,char,phase,sliding=false,fl=100,scale=1,label=true){
+const jonahSheet=new Image();jonahSheet.onload=()=>{paintPortraits();if(typeof paintControlIcons==='function')paintControlIcons();};jonahSheet.src='jonah-run.png';
+function drawAvatar(c,x,y,char,phase,sliding=false,fl=100,scale=1,label=true,carryTorch=true){
  c.save();c.translate(x,y);c.scale(scale,scale);c.lineCap='round';c.lineJoin='round';
  let hand=null;const gait=Math.sin(phase),op=Math.sin(phase+Math.PI),bob=Math.cos(phase*2)*1.25,low=sliding?15:0;
  const ell=(x,y,rx,ry,col)=>{c.fillStyle=col;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();};
  const stroke=(pts,col,w=3)=>{c.strokeStyle=col;c.lineWidth=w;c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.stroke();};
  const path=(pts,col)=>{c.fillStyle=col;c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.closePath();c.fill();};
- ell(0,3,18,3,'#17352b22');
+ if(carryTorch)ell(0,3,18,3,'#17352b22');
  if(char==='jonah'&&jonahSheet.complete&&jonahSheet.naturalWidth){
   const frame=sliding?2:((Math.floor(phase*1.15)%8)+8)%8,sw=jonahSheet.naturalWidth/4,sh=jonahSheet.naturalHeight/2;
   // Preserve each complete painted pose: no torso/leg slices or replacement arms.
@@ -45,6 +45,7 @@ function drawAvatar(c,x,y,char,phase,sliding=false,fl=100,scale=1,label=true){
   if(shadow){ell(5,headY-1,2.2,2.2,'#f1f2d4');ell(10,headY-1,1.5,2,'#f1f2d4');}
   path([[-4,-36+low],[-15,-35+low],[-22-gait*3,-39+low]],shadow?'#43525a':'#bdaf72');
  }
+ if(!carryTorch){c.restore();return;}
  const tx=hand?hand[0]+5:char==='elephant'?35:24,ty=hand?hand[1]-18:((['elephant','rabbit','tortoise','cheetah','ant'].includes(char)?-42:-49)+low);
  stroke([[tx-5,ty+21],[tx,ty]],'#72543b',3);if(hand)ell(hand[0],hand[1],2.2,1.5,'#cf9a70');
  const strength=Math.max(0,Math.min(100,fl)),size=(2+strength*.13)*(1+Math.sin(phase*1.7)*.05);
