@@ -10,7 +10,7 @@
  };
  const names=['The Quiet Heights','Cloud Garden','Willow Crossing','A River of Mist','First Starlight','Moonlit Footsteps','Silver Pines','The Sleeping Valley','Windward Path','Amber Horizon','The Blue Divide','Drifting Islands','The Long Exhale','Twilight Orchard','A Sea of Stars','The Far Bell','Velvet Thunder','The Hollow Moon','Above the Rain','Last Golden Hour','Beyond the Pines','The Silent Summit','A Thousand Clouds','Edge of the Night','The Last Flame'];
  const tiers=[{name:'Easy',burn:.8,regen:1.15},{name:'Medium',burn:.9,regen:1.05},{name:'Hard',burn:1,regen:1},{name:'Very hard',burn:1.02,regen:1}];
- const levels=names.map((name,i)=>({id:i+1,name,length:i<9?2000+i*250:i<19?4000+(i-8)*500:9000+(i-18)*10000,theme:i%2===0?'dawn':'night',maxJumps:i<5?3:i<10?4:i<19?5:6,difficulty:tiers[i<5?0:i<15?1:i<20?2:3].name,tier:i<5?0:i<15?1:i<20?2:3,scale:1+i*.008,pressure:i<5?4+i*.4:i<15?8+(i-5)*.7:i<20?16+(i-15)*.7:19.8+(i-20)*.35,spacing:220-i*3.5,seed:71+i*137}));
+ const levels=names.map((name,i)=>({id:i+1,name,length:i<9?2000+i*250:i<19?4000+(i-8)*500:9000+(i-18)*10000,theme:['dawn','dusk','night'][i%3],maxJumps:i<5?3:i<10?4:i<19?5:6,difficulty:tiers[i<5?0:i<15?1:i<20?2:3].name,tier:i<5?0:i<15?1:i<20?2:3,scale:1+i*.008,pressure:i<5?4+i*.4:i<15?8+(i-5)*.7:i<20?16+(i-15)*.7:19.8+(i-20)*.35,spacing:220-i*3.5,seed:71+i*137}));
  function level(id=1){return levels[Math.max(0,Math.min(24,Math.floor(id)-1))];}
  function noise(n,seed){let x=Math.imul(n+seed,374761393);x=Math.imul(x^(x>>>13),1274126177);return ((x^(x>>>16))>>>0)/4294967296;}
  const routes=new Map();
