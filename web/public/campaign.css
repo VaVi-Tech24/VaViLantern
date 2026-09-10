@@ -117,3 +117,49 @@ h1{font-size:clamp(58px,6.6vw,90px);letter-spacing:-4px}.panel{top:20%;width:380
 #menu .eyebrow{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:clamp(16px,1.6vw,21px);line-height:1.3;letter-spacing:.3px;gap:10px;text-transform:none;transform:translateX(-14px)}
 #menu .eyebrow .journeyBullet{flex:0 0 auto;width:auto;height:auto;background:none;border-radius:0;font-family:Arial,sans-serif;font-style:normal;font-size:18px;line-height:1;color:#718c63}
 @media(max-height:460px){#menu .eyebrow{font-size:16px}}
+
+/* Floating, theme-matched stats with no card or duplicate flame display. */
+#hud .stat{opacity:1;background:transparent;backdrop-filter:none;border:0;box-shadow:none;color:#36584d}
+.night #hud .stat{color:#d4e1d1}
+#hud .stat .travelerName,#hud .stat>small{font:400 12px/1.4 Arial,sans-serif;letter-spacing:.4px}
+#hud .stat .travelerName{margin:0}
+#hud .stat strong{font-size:25px;margin:3px 0 5px;font-variant-numeric:tabular-nums}
+#hud .stat .scorePoints,#hud .stat .bridgeLead{display:block}
+#hud .stat .bridgeLead{margin-top:5px}
+#hud .stat .urgent{color:#963f2b}
+.night #hud .stat .urgent{color:#f2c087}
+@media(max-width:699px),(max-height:600px){#hud .stat .travelerName,#hud .stat>small{font-size:11px}#hud .stat strong{font-size:22px}}
+
+
+/* One compact gameplay header; no statistics below the top line. */
+header:has(#hud:not([hidden])){display:flex;align-items:center;gap:16px}
+header:has(#hud:not([hidden])) .topright{display:flex;align-items:center;gap:16px;min-width:0}
+header #hud,header #hud.split{position:static;inset:auto;display:flex;align-items:center;gap:14px;min-width:0}
+header #hud .stat,header #hud.split .stat{position:static;inset:auto;display:flex;align-items:baseline;gap:12px;min-width:0;width:auto;padding:0;white-space:nowrap;background:none;border:0;box-shadow:none;flex:initial}
+header #hud .stat>span{position:static;display:inline;font:400 12px/1.4 Arial,sans-serif;letter-spacing:0;margin:0;font-variant-numeric:tabular-nums}
+header #hud .stat .travelerName{font:italic 400 12px/1.4 Georgia,'Times New Roman',serif;letter-spacing:.15px;margin:0;padding:0;align-self:baseline}
+header #hud .stat .hudDistance{font-weight:600}
+@media(max-width:1100px){
+ header:has(#hud:not([hidden])){left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));gap:10px}
+ header:has(#hud:not([hidden])) .topright{gap:10px}
+ header #hud .stat,header #hud.split .stat{gap:8px}
+ header #hud .stat>span,header #hud .stat .travelerName{font-size:11px}
+}
+@media(max-width:699px){
+ /* Retain readable type on narrow phones: the single row scrolls horizontally. */
+ header:has(#hud:not([hidden])){justify-content:flex-start;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;touch-action:pan-x;padding:3px 0}
+ header:has(#hud:not([hidden]))::-webkit-scrollbar{display:none}
+ header:has(#hud:not([hidden])) #brand{font-size:18px;gap:6px;flex-shrink:0}
+ header:has(#hud:not([hidden])) #brand img{width:30px;height:30px}
+ header:has(#hud:not([hidden])) .topright{flex-shrink:0}
+ header:has(#hud:not([hidden])) #sound,header:has(#hud:not([hidden])) #pause{font-size:11px;padding:7px 9px;white-space:nowrap}
+}
+
+/* Center statistics in the available space between the brand and audio controls. */
+header:has(#hud:not([hidden])){display:grid;grid-template-columns:auto minmax(max-content,1fr) auto auto;column-gap:16px}
+header:has(#hud:not([hidden])) .topright{display:contents}
+header:has(#hud:not([hidden])) #brand{grid-column:1;grid-row:1}
+header #hud,header #hud.split{grid-column:2;grid-row:1;justify-self:center;justify-content:center}
+header:has(#hud:not([hidden])) #sound{grid-column:3;grid-row:1}
+header:has(#hud:not([hidden])) #pause{grid-column:4;grid-row:1}
+@media(max-width:699px){header:has(#hud:not([hidden])){column-gap:10px}}
