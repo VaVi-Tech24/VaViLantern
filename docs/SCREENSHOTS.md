@@ -6,6 +6,20 @@ Screenshots supplied by the project owner on September 8–9, 2026. These origin
 
 The desktop and portrait dawn home screenshots were refreshed on September 9, 2026 with the new “Serene and Relaxing Journey” tagline. Existing image paths are retained so README and gallery links remain stable.
 
+## Updated gameplay screenshots
+
+### Solo journey: timber obstacles
+
+Solid wooden jump and slide barriers with directional arrows, plus the compact stats header.
+
+![Solo gameplay with jump and slide barriers](screenshots/gameplay/solo-timber-obstacles.png)
+
+### Local multiplayer: two together
+
+Two players share one screen on separate bridges, with individual stats and controls. Player 1 runs above; player 2 runs below.
+
+![Local multiplayer with two stacked bridges](screenshots/gameplay/local-multiplayer-two-bridges.png)
+
 ## Portrait mobile screenshots
 
 Supplied September 9, 2026. Select an image to view its original resolution.
