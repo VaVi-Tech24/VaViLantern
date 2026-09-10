@@ -1,9 +1,9 @@
 # VaVi Lantern
 
-A serene game by VaVi Tech: carry the last flame the world falls away behind you, find your pace keep the flame alive, finish the journey across 25 calm and relaxing levels.<br>
+A serene game by VaViTech24: carry the last flame the world falls away behind you, find your pace keep the flame alive, finish the journey across 25 calm and relaxing levels.<br>
 
 <p align="center">
-  <img src="docs/images/vavi-tech24-logo.jpg" alt="VaVi Tech24 logo" width="280">
+  <img src="docs/images/vavi-tech24-logo.jpg" alt="VaViTech24 logo" width="280">
 </p>
 
 Walk to restore your torch, sprint to escape the collapsing bridge, and time your jumps across 25 progressively longer levels. Choose Jonah, Junnu, Prem, Chinnu, Joel or Pranay. Play solo or share one device on two bridges.

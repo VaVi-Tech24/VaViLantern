@@ -2,7 +2,7 @@
 
 ## Static website
 
-Run `npm run build`; publish the contents of `dist/` to a static HTTPS host. `index.html` must be at the hosting root. The build includes all scripts/styles, Jonah's atlas, the supplied VaVi Tech logo and existing brand assets. Only allowlisted public files are copied; no Android keys, server score data or development tools belong in this output.
+Run `npm run build`; publish the contents of `dist/` to a static HTTPS host. `index.html` must be at the hosting root. The build includes all scripts/styles, Jonah's atlas, the supplied VaViTech24 logo and existing brand assets. Only allowlisted public files are copied; no Android keys, server score data or development tools belong in this output.
 
 Solo and same-device multiplayer need no API. Progress is stored under the website origin, so switching hostname creates a separate storage area. There is no service worker/installable-PWA cache in this version; Android is the packaged offline distribution.
 

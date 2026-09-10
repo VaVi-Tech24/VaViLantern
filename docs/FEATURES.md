@@ -13,7 +13,7 @@
 - Responsive pointer/keyboard controls and same-device two-player bridges.
 - Local progress, recent records, character and sound settings.
 - Synthesized jump, sprint, slide, refill, finish and splash sounds, with mute and audio lifecycle handling.
-- Supplied VaVi Tech logo and footer reading copyright VaVi Tech 2026.
+- Supplied VaViTech24 logo and footer reading copyright VaViTech24 2026.
 - Optional server-authoritative two-player invitations and rolling seven-day run leaderboard.
 
 ## Available source, not a live production service

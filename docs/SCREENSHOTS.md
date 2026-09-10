@@ -32,7 +32,7 @@ Supplied September 9, 2026. Select an image to view its original resolution.
 |---|---|
 | [<img src="screenshots/2026-09-09-mobile/03-travelers.jpg" alt="Portrait mobile traveler selection" width="300">](screenshots/2026-09-09-mobile/03-travelers.jpg) | [<img src="screenshots/2026-09-09-mobile/04-jump-and-refill.jpg" alt="Jonah jumping toward a flame refill with mobile touch controls" width="300">](screenshots/2026-09-09-mobile/04-jump-and-refill.jpg) |
 
-The repeated [dawn clipboard capture](screenshots/2026-09-09-mobile/06-home-dawn-clipboard.jpg) is also preserved. The supplied [VaVi Tech24 logo](images/vavi-tech24-logo.jpg) appears below the opening description in the project README.
+The repeated [dawn clipboard capture](screenshots/2026-09-09-mobile/06-home-dawn-clipboard.jpg) is also preserved. The supplied [VaViTech24 logo](images/vavi-tech24-logo.jpg) appears below the opening description in the project README.
 
 ## Dawn home screen
 

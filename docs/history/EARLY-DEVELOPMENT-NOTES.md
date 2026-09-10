@@ -20,7 +20,7 @@ Read [VERSION-0.2.2.md](VERSION-0.2.2.md) for the steady torch pose, shaded clou
 
 # VaVi Lantern: Eternal Flame
 
-A small flame above an endless sky. Published under **VaVi Tech**.
+A small flame above an endless sky. Published under **VaViTech24**.
 
 This is a playable **0.1.0 alpha**, with an Android application project, original generated cosmic lantern artwork, an offline game, and an optional multiplayer service. It is not a finished, certified Play Store release. The art is AI-assisted and procedurally drawn, not claimed to be human-made.
 

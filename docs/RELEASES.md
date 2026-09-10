@@ -1,4 +1,12 @@
-# Version 1.0.0 release
+# Android releases
+
+## Latest: 1.0.0 build 25
+
+Publisher branding is **VaViTech24** throughout the game and documentation. This build packages the latest game, including the Dawn → Dusk → Night level cycle. The application ID remains `com.vavitech.lantern`, minimum SDK 26 and target SDK 36.
+
+Download the APK from [build 25](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build25). It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
+
+## Original version 1.0.0 release
 
 VersionName/package version: **1.0.0**. Android versionCode: **23**. Application ID: **com.vavitech.lantern**. Minimum Android API: **26**.
 

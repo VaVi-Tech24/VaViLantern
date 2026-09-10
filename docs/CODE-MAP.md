@@ -13,7 +13,7 @@ Paths are relative to the repository root. Search the function names below; many
 | `web/public/style.css` | Base layout and responsive controls | `.panel`, `.stat`, `#hud`, `#controls` |
 | `web/public/campaign.css` | Campaign, portrait cards, split layout, type | `.levelGrid`, `.characterGrid`, `.travelerName` |
 | `web/public/jonah-run.png` | Eight complete poses in a 4 by 2 atlas | Per-frame hand and sole offsets in `characters.js` |
-| `web/public/vavi-tech-logo.png` | Supplied VaVi Tech 24 logo | Header |
+| `web/public/vavi-tech-logo.png` | Supplied VaViTech24 logo | Header |
 | `web/public/cosmic-lantern.png` | Earlier brand asset | Preserved artwork |
 | `assets/` | Original/reference images | Some references are not deployed |
 | `app/src/main/java/com/vavitech/lantern/MainActivity.java` | Android asset interception and lifecycle | `onCreate`, `shouldInterceptRequest`, `onPause`, `onResume`, `onBackPressed` |

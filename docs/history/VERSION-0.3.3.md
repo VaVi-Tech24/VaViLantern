@@ -1,6 +1,6 @@
 # VaVi Lantern 0.3.3 — A gentle beginning
 
-VaVi Tech is centered beneath the VaVi Lantern wordmark. Diagonal beam and rope obstacles extend between the front and back deck edges.
+VaViTech24 is centered beneath the VaVi Lantern wordmark. Diagonal beam and rope obstacles extend between the front and back deck edges.
 
 A distinct distant mountain appears at the start with amber meteor trails and glowing debris. The mountain layers and bridge gently tremble. The opening sound uses a warm chord and soft bells instead of the earlier rumble and rock impacts. The audio startup race is fixed: the opening sound waits for AudioContext resume, respects mute, and discards stale queued playback on restart. Reduced-motion preferences suppress shaking and reduce meteor movement. Meteors are background scenery, not additional hazards.
 

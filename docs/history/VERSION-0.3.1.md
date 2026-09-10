@@ -4,7 +4,7 @@ Beam and rope obstacles sit across the deck center with diagonal bases and cross
 
 Each level and retry begins at a lantern gateway labeled “The crossing begins.” A 1.65-second fading tremor shakes the bridge while a soft low rumble and wooden ticks accompany the existing collapse. Touch controls and HUD stay steady. The visual tremor respects reduced-motion preferences; sound respects mute.
 
-VaVi and Lantern now share matching italic serif lettering. VaVi Tech uses a lighter, spaced serif treatment.
+VaVi and Lantern now share matching italic serif lettering. VaViTech24 uses a lighter, spaced serif treatment.
 
 Level 1 starts at 2,000 metres. Levels 2–9 add 250 metres each, levels 10–19 add 500 metres each, and levels 20–25 add 10,000 metres each. Boundary distances are level 9: 4,000 m; level 10: 4,500 m; level 19: 9,000 m; level 20: 19,000 m; level 25: 69,000 m. Each level increases running pace and collapse pressure, with additional obstacles every three levels. All requested jump counts and three refill posts remain.
 

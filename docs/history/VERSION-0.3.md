@@ -6,7 +6,7 @@ Every one of the 25 levels now contains 10 small gaps, 6 double-jump gaps, 3 tri
 
 Fatal falls, exhausted flames and fatal obstacle collisions now show the traveler tumbling into water. A soft filtered-noise splash with gentle tonal bubbles accompanies droplets and expanding ripples, followed by the retry screen. Sound respects the existing mute setting. Crow contact still drains flame rather than always causing death.
 
-A large timber gateway with hanging lanterns, warm glow and floating sparks marks the finish. The VaVi Lantern wordmark uses serif lettering with an italic Lantern, and VaVi Tech uses small spaced capitals.
+A large timber gateway with hanging lanterns, warm glow and floating sparks marks the finish. The VaVi Lantern wordmark uses serif lettering with an italic Lantern, and VaViTech24 uses small spaced capitals.
 
 Validation: campaign, route-count, safe-post placement, refill-once, retry, fall/splash-once, UI lifecycle/orientation and multiplayer service checks passed. All six characters completed all 25 routes in deterministic controller tests (150 runs). Browser reviews covered the finish gateway, centered runner, falling pose, splash and refill post. Human difficulty and Android audio/animation should still be assessed on a physical phone.
 
