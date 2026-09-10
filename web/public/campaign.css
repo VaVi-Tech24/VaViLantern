@@ -163,3 +163,10 @@ header #hud,header #hud.split{grid-column:2;grid-row:1;justify-self:center;justi
 header:has(#hud:not([hidden])) #sound{grid-column:3;grid-row:1}
 header:has(#hud:not([hidden])) #pause{grid-column:4;grid-row:1}
 @media(max-width:699px){header:has(#hud:not([hidden])){column-gap:10px}}
+
+/* Keep only the publisher logo in the gameplay header. */
+header:has(#hud:not([hidden])) #brand>span{display:none}
+
+/* Raise the complete gameplay header while respecting the screen safe area. */
+header:has(#hud:not([hidden])){top:max(5px,env(safe-area-inset-top))}
+
