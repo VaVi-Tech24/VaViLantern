@@ -91,6 +91,10 @@ The deployment contains twelve public files plus hosting metadata: index.html, s
 
 The .openai/hosting.json file binds this checkout to the existing Sites project and selects dist as its static directory. Retain this binding when updating. Deployment archives and short-lived source credentials are operational artifacts, not public repository content.
 
+## Browser and hosting cache
+
+The observed production policy is `public, must-revalidate, max-age=0`; it remains unchanged. See [caching, conditional requests and refreshes](CACHING.md) for measured headers, the request-flow diagram, saved-progress behavior and future versioned-asset options.
+
 ## Updates and rollback
 
 1. Edit the shared web/public source and run checks appropriate to the change. Run npm test for gameplay changes and npm run test:playability for campaign/physics changes.

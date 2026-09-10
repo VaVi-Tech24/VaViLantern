@@ -124,6 +124,10 @@ We can verify the Sites deployment, returned DNS targets and Cloudflare-backed d
 
 GitHub pushes do not automatically update this deployment. A website update requires the separate Sites publication workflow. See [publishing and rollback](HOSTING.md#updates-and-rollback).
 
+## Caching after the request reaches hosting
+
+A browser request can be answered by the Sites-managed delivery cache without reaching the hosting origin. It does not mean every gameplay action makes a network request. See [browser and hosting caching](CACHING.md) for the observed headers and conditional-request diagram.
+
 ## Technical references and diagram sources
 
 - [Cloudflare IPv4 ranges](https://www.cloudflare.com/ips-v4)
