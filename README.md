@@ -10,6 +10,8 @@ Walk to restore your torch, sprint to escape the collapsing bridge, and time you
 
 ## Screenshots
 
+[View the latest Google Play Android screenshots](docs/screenshots/2026-09-12-google-play/README.md) — portrait home and travelers, landscape gameplay, gesture guidance, and dawn/dusk/night scenery (September 12, 2026).
+
 ![VaVi Lantern dawn home screen](docs/screenshots/2026-09-08/01-home-dawn.png)
 
 [View the screenshot gallery](docs/SCREENSHOTS.md) for desktop and portrait mobile views of travelers, level selection, collapsing bridges, the finish gateway, and dusk and night scenery. Screenshots supplied September 8–9, 2026.
