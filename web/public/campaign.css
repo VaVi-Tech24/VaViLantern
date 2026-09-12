@@ -186,6 +186,7 @@ header:has(#hud:not([hidden])){top:max(5px,env(safe-area-inset-top))}
 /* Contextual level-one gestures stay clear of the runner and accept no touches. */
 #gestureCue {position:fixed;left:50%;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:12px;pointer-events:none;color:#24493e;font:italic 17px Georgia,serif;text-shadow:0 1px 5px #f2eedb;white-space:nowrap}
 #gestureCue[hidden] {display:none}
+.playOptions button {font-weight:700}
 #gestureCue .gestureDemo {flex:none;margin:0;width:50px;height:66px;border:0;background:none}
 #gestureCue .gestureDemo i {left:17px}
 #gestureCue small {display:block;margin-top:5px;font:12px sans-serif}

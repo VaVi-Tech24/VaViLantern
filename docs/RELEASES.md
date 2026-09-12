@@ -1,10 +1,10 @@
 # Android releases
 
-## Latest: 1.0.0 build 29
+## Latest: 1.0.0 build 30
 
 Publisher branding is **VaViTech24** throughout the game and documentation. This build packages the latest game, including the Dawn → Dusk → Night level cycle. The application ID remains `com.vavitech.lantern`, minimum SDK 26 and target SDK 36.
 
-Download the APK from [build 29](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build29). Build 29 centers Jonah, the torch and the badge for adaptive launcher masks. Level 1 starts immediately and shows contextual animated jump, slide and sprint cues during play. The VaViTech24 in-game logo, optional How to play guide and landscape option remain available. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
+Download the APK from [build 30](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build30). Build 30 shows the first jump cue about three seconds ahead, gives earlier slide guidance, and bolds Landscape and How to play on the home screen. Level 1 starts immediately and shows contextual animated jump, slide and sprint cues during play. The VaViTech24 in-game logo, optional How to play guide and landscape option remain available. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
 
 ## Original version 1.0.0 release
 

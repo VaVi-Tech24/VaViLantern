@@ -36,11 +36,13 @@ function updateGestureCue(){
  let action='',label='',detail='';
  if(state==='playing'&&selectedLevel===1&&mode!=='online'&&p&&p.alive&&!p.completed){
   const speed=p.y>0?64:(p.sprint?E.travelers[p.character].sprint:E.travelers[p.character].pace);
-  const next=E.obstacles(seed,p.x,p.x+speed*.35,1).find(o=>['gap','rope','beam'].includes(o.type));
+  // Give players time to learn the motion before the short action window.
+  const next=E.obstacles(seed,p.x,p.x+speed*3,1).find(o=>['gap','rope','beam'].includes(o.type));
   if(next){
    action=next.type==='beam'?'swipeDown':'swipeUp';
    label=next.type==='beam'?'Swipe down · Slide':'Swipe up · Jump';
-   detail=next.jumpsRequired>1?'Tap again in the air · '+next.jumpsRequired+' jumps':'';
+   const ready=next.x-p.x<=speed*.35;
+   detail=ready?(next.type==='beam'?'Slide now':next.jumpsRequired>1?'Tap again in the air · '+next.jumpsRequired+' jumps':'Jump now'):(next.type==='beam'?'Tall barrier ahead · wait until close':'Jump ahead · wait until close');
    if(next.type==='beam'&&p.slide>0)action='';
    if(next.type!=='beam'&&p.y>0&&next.jumpsRequired<=1)action='';
   }else if(p.x-p.edge<65&&!p.sprint&&p.flame>35){
