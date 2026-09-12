@@ -1,6 +1,6 @@
 # End-to-end architecture
 
-The same JavaScript game runs in a browser and Android System WebView. There is no native physics engine or JavaScript-to-Java bridge. Local gameplay has no external API dependency. The optional Node service imports the same physics module.
+The same JavaScript game runs in a browser and Android System WebView. There is no native physics engine or `addJavascriptInterface` object. Android handles orientation navigation requests and sends lifecycle notifications through `evaluateJavascript`. Local gameplay has no external API dependency. The optional Node service imports the same physics module. See the [Android app guide](ANDROID.md) for packaging, first launch, offline behavior and updates.
 
 ## System and trust boundaries
 
