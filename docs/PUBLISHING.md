@@ -6,9 +6,9 @@ GitHub distribution and Google Play publication are separate. Version 1.0.0 is c
 
 ### September 2026 preparation
 
-The latest Android source uses versionName **1.0.0**, versionCode **31**, and packages the current website assets, including the Dawn → Dusk → Night level cycle. The application ID is `com.vavitech24.lantern`. A locally built debug APK is for device testing; an unsigned release AAB must be upload-key signed before Play submission. Do not overwrite an older published binary or assume its signature is suitable for production.
+The latest Android source uses versionName **1.0.0**, versionCode **32**, and packages the current website assets, including the Dawn → Dusk → Night level cycle. The application ID is `com.vavitech24.lantern`. A locally built debug APK is for device testing; an unsigned release AAB must be upload-key signed before Play submission. Do not overwrite an older published binary or assume its signature is suitable for production.
 
-The owner has not yet registered a Play Console account. The next steps are:
+The owner reports that the Play Console account is verified and app setup is in progress. Confirmed intended audience: **13 and older**. Public support contact: **vavitech24@gmail.com**. Complete the remaining steps below; account registration is already done.
 
 1. Register at [Play Console](https://play.google.com/console/signup). Google lists a US$25 one-time registration fee; complete the identity/contact and applicable Android-device verification steps. Choose Personal or Organization based on actual legal status.
 2. Create the game listing as VaVi Lantern. Keep the package ID above, and prepare a public support email and final privacy-policy URL.
@@ -58,3 +58,7 @@ Advertise online races only after the separate service is publicly deployed and 
 Official references: [Developer registration](https://support.google.com/googleplay/android-developer/answer/6112435), [testing requirements](https://support.google.com/googleplay/android-developer/answer/14151465), [target SDK](https://developer.android.com/google/play/requirements/target-sdk), [store assets](https://support.google.com/googleplay/android-developer/answer/9866151), [privacy requirements](https://support.google.com/googleplay/android-developer/answer/10144311).
 
 The optional online prototype does not establish verified identities or prevent bots. No cash-reward promotion is implemented or approved. Recheck current platform policies when preparing the actual submission rather than relying on an old checklist.
+
+## Confirmed offline Play edition
+
+Build 32 includes solo and same-device two-player modes only. No login, ads, analytics or internet permission. Public support email: vavitech24@gmail.com. Intended audience: 13 and older. The Android privacy policy is bundled as android-privacy.html and must also be published at https://vavilantern.com/android-privacy.html before submitting that URL. Data safety answers must describe this offline artifact, not earlier builds with optional online features.

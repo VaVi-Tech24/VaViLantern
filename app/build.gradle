@@ -6,10 +6,23 @@ android {
         applicationId 'com.vavitech24.lantern'
         minSdk 26
         targetSdk 36
-        versionCode 31
+        versionCode 32
         versionName '1.0.0'
     }
-    sourceSets { main { assets.srcDirs = ['../web/public'] } }
+    sourceSets { main { assets.srcDirs = [layout.buildDirectory.dir('generated/offlineAssets')] } }
     buildTypes { release { minifyEnabled false } }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
 }
+
+// Keep website-only networking out of the offline Android distribution.
+tasks.register('prepareOfflineAssets', Sync) {
+    from('../web/public') {
+        exclude 'online.js'
+        filesMatching('index.html') {
+            filter { line -> line.replace('<script src="online.js"></script>', '<script src="offline.js"></script>') }
+        }
+    }
+    from('src/offline')
+    into(layout.buildDirectory.dir('generated/offlineAssets'))
+}
+tasks.named('preBuild').configure { dependsOn('prepareOfflineAssets') }

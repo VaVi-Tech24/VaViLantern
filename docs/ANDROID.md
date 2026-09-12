@@ -15,17 +15,17 @@ VaVi Lantern is a WebView-based Android game. The Android layer is written in Ja
 | `web/public/engine.js` | Levels, movement, collisions and game rules |
 | `web/public/characters.js` | Character rendering |
 | `web/public/sound.js` | Synthesized game audio |
-| `web/public/online.js` | Optional connection to a configured game service |
+| `web/public/online.js` | Website-only networking; excluded from Android |
 | Root Gradle files and `gradle/` | Project configuration and build wrapper |
 
 The `app/` folder is an Android module, not a standalone copy of the entire project. Clone the **whole repository** and open its root in Android Studio.
 
 ## How the game enters the APK
 
-The following setting in `app/build.gradle` packages `web/public/` as Android assets:
+The prepareOfflineAssets task copies shared web files, excludes online.js, and substitutes app/src/offline/offline.js to add the privacy link. The following setting in `app/build.gradle` packages `web/public/` as Android assets:
 
 ```gradle
-sourceSets { main { assets.srcDirs = ['../web/public'] } }
+sourceSets { main { assets.srcDirs = [layout.buildDirectory.dir('generated/offlineAssets')] } }
 ```
 
 JavaScript, HTML, CSS and images are included during the build. The Node server in `server/` is not bundled as a running backend. Android does not need Node.js installed to play.
@@ -40,14 +40,14 @@ flowchart TD
   URL --> Intercept[shouldInterceptRequest reads Android assets]
   Intercept --> Game[HTML UI, Canvas, JavaScript and Web Audio]
   Game --> Local[(App-local progress and settings)]
-  Game -. Optional configured HTTPS service .-> Online[Online game service]
+
 ```
 
 ## Does the first launch contact the website?
 
 **No.** MainActivity loads `https://appassets.androidplatform.net/index.html`. For this origin, its request interceptor returns files using `getAssets().open(...)` from the installed APK. This is a virtual local HTTPS origin, not a request to download the game from `vavilantern.com`, ChatGPT Sites or Cloudflare. First launch and later launches use the same local loading mechanism.
 
-Solo and same-device two-player modes work offline. Online races and the world board require a separately configured HTTPS game service and connectivity. The INTERNET permission enables those optional requests; it does not mean local startup downloads the website.
+Solo and same-device two-player modes work offline. Build 32 and later omit online races and the world board, exclude online.js, have no INTERNET permission, and block external resource requests. Only solo and same-device two-player modes are included.
 
 Progress and settings use WebView localStorage. They are separate from the browser website's storage and are not automatically synchronized. Clearing app data or uninstalling can remove local progress.
 
