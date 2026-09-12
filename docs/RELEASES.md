@@ -1,10 +1,10 @@
 # Android releases
 
-## Latest: 1.0.0 build 27
+## Latest: 1.0.0 build 28
 
 Publisher branding is **VaViTech24** throughout the game and documentation. This build packages the latest game, including the Dawn → Dusk → Night level cycle. The application ID remains `com.vavitech.lantern`, minimum SDK 26 and target SDK 36.
 
-Download the APK from [build 27](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build27). Build 27 uses the selected Jonah-and-torch bridge artwork for the Android launcher icon and in-app header logo. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
+Download the APK from [build 28](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build28). Build 28 fills the launcher icon with the selected artwork, restores the VaViTech24 in-app logo, and adds animated gesture instructions plus a home-screen landscape option. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
 
 ## Original version 1.0.0 release
 

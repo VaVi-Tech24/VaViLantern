@@ -170,3 +170,16 @@ header:has(#hud:not([hidden])) #brand>span{display:none}
 /* Raise the complete gameplay header while respecting the screen safe area. */
 header:has(#hud:not([hidden])){top:max(5px,env(safe-area-inset-top))}
 
+/* Home orientation hint and first-level gesture demonstrations. */
+.playOptions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:13px}
+.playOptions button{padding:6px 0;color:inherit;font:inherit;opacity:.85}
+.gestureGuide{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.gestureGuide section{text-align:center;min-width:0}.gestureGuide b{font-size:17px}.gestureGuide p{font-size:14px;line-height:1.5;margin:8px 0}
+.gestureDemo{position:relative;width:62px;height:82px;margin:0 auto 12px;border:1px solid #789d9180;border-radius:16px;background:#789d9114}
+.gestureDemo span{position:absolute;left:0;right:0;top:18px;font-size:28px;color:#527864}.gestureDemo i{position:absolute;width:14px;height:14px;background:#d7aa5a;border:2px solid #fff1cc;border-radius:50%;left:22px;top:50px;animation:swipeUpDemo 1.8s ease-in-out infinite}
+.swipeDown i{top:14px;animation-name:swipeDownDemo}.holdDemo i{top:48px;animation-name:holdDemo}.guideNote{font-size:13px;line-height:1.5}
+@keyframes swipeUpDemo{0%,15%{transform:translateY(0);opacity:.3}65%{transform:translateY(-38px);opacity:1}100%{transform:translateY(-38px);opacity:0}}
+@keyframes swipeDownDemo{0%,15%{transform:translateY(0);opacity:.3}65%{transform:translateY(38px);opacity:1}100%{transform:translateY(38px);opacity:0}}
+@keyframes holdDemo{0%,100%{box-shadow:0 0 0 0 #d7aa5a40}60%{box-shadow:0 0 0 12px #d7aa5a10}}
+@media(max-width:500px){.gestureGuide{gap:8px}.gestureGuide p{font-size:12px}.gestureGuide b{font-size:15px}.playOptions{gap:15px;margin-top:6px}}
+@media(prefers-reduced-motion:reduce){.gestureDemo i{animation:none}}

@@ -25,14 +25,27 @@ public class MainActivity extends Activity {
         game.getSettings().setAllowContentAccess(false);
         game.getSettings().setMediaPlaybackRequiresUserGesture(true);
         game.setWebViewClient(new WebViewClient() {
-            @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) { return !"appassets.androidplatform.net".equals(request.getUrl().getHost()); }
+            @Override public void onPageFinished(WebView view, String url) {
+                if ("https://appassets.androidplatform.net/index.html".equals(url))
+                    view.evaluateJavascript("window.vaviAndroid=true;", null);
+            }
+            @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (request.isForMainFrame() && "vavi".equals(request.getUrl().getScheme())) {
+                    if ("landscape".equals(request.getUrl().getHost()))
+                        setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                    else if ("auto".equals(request.getUrl().getHost()))
+                        setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_FULL_USER);
+                    return true;
+                }
+                return !"appassets.androidplatform.net".equals(request.getUrl().getHost());
+            }
             @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
                 if (!"appassets.androidplatform.net".equals(request.getUrl().getHost()) && "https".equals(request.getUrl().getScheme())) return null;
                 String path = request.getUrl().getPath();
                 if (!"appassets.androidplatform.net".equals(request.getUrl().getHost()) || path == null || !path.matches("/[a-zA-Z0-9_.-]+")) return empty();
                 try {
                     String mime = path.endsWith(".js") ? "application/javascript" : path.endsWith(".css") ? "text/css" : path.endsWith(".svg") ? "image/svg+xml" : path.endsWith(".png") ? "image/png" : path.endsWith(".jpg") ? "image/jpeg" : "text/html";
-                    WebResourceResponse r = new WebResourceResponse(mime, "UTF-8", ("/vavi-tech-logo.png".equals(path) ? getResources().openRawResource(R.drawable.lantern_app_icon) : getAssets().open(path.substring(1))));
+                    WebResourceResponse r = new WebResourceResponse(mime, "UTF-8", getAssets().open(path.substring(1)));
                     r.setResponseHeaders(Collections.singletonMap("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src https: http://localhost:* http://127.0.0.1:*; object-src 'none'"));
                     return r;
                 } catch (Exception e) { return empty(); }
