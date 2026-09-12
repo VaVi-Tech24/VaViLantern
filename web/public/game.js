@@ -19,18 +19,42 @@ function closeModal(){dialog.close();if(state==='paused')resume();else if(state=
 $('#characters').onclick=()=>{modal('<div class="eyebrow">YOUR COMPANION</div><h2>A small, brave soul.</h2><div class="characterGrid">'+Object.entries(E.travelers).sort((a,b)=>(a[0]==='stickman')-(b[0]==='stickman')).map(([key,c])=>`<button class="option ${character===key?'selected':''}" data-char="${key}"><canvas width="110" height="90" data-portrait="${key}" aria-hidden="true"></canvas><b>${c.name}</b><small>${c.description}</small></button>`).join('')+'</div>');paintPortraits();document.querySelectorAll('[data-char]').forEach(b=>b.onclick=()=>{character=b.dataset.char;store.character=character;save();dialog.close();toast(E.travelers[character].name+' will carry the last flame.');});};
 $('#levels').onclick=()=>{modal('<div class="eyebrow">25 LIGHTS TO FIND</div><h2>Your journey.</h2><p>Finish a level to unlock the next. Every retry begins at the start of that level.</p><div class="levelGrid">'+E.levels.map(l=>`<button data-level="${l.id}" class="${selectedLevel===l.id?'selected':''}" ${l.id>store.unlocked?'disabled':''} aria-label="Level ${l.id}: ${l.name}${l.id>store.unlocked?', locked':''}"><b>${String(l.id).padStart(2,'0')}</b><small>${store.completed.includes(l.id)?'✓':l.id>store.unlocked?'Locked':l.length+' m'}</small></button>`).join('')+'</div>');document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{selectedLevel=+b.dataset.level;store.selectedLevel=selectedLevel;save();updateMenu();dialog.close();});};
 $('#records').onclick=()=>modal('<div class="eyebrow">ON THIS DEVICE</div><h2>Lights remembered.</h2><p>'+store.completed.length+' / 25 levels finished</p>'+ (store.records.length?store.records.map(r=>`<div class="scoreline"><span>Level ${Number(r.level)||1} · ${r.completed?'Finished':Math.floor(Number(r.distance)||0)+' m'}</span><span>${Math.floor(Number(r.score)||0)} pts</span></div>`).join(''):'<p>Your first light is waiting.</p>'));
-function start(){if(mode==='online'&&window.onlineNet&&!window.onlineNet.active){window.onlineNet.open();return;}selectedLevel=mode==='online'?E.level(selectedLevel).id:Math.min(store.unlocked,Math.max(1,selectedLevel));const stage=E.level(selectedLevel);setSky(stage.theme);seed=stage.seed;dialog.close();state='playing';falls=[];time=0;deathTime=0;acc=0;hudClock=0;last=performance.now();S.init();S.reset();S.play('quake');players=[E.player(character,selectedLevel)];if(['local','online'].includes(mode))players.push(E.player(character,selectedLevel));$('#menu').hidden=true;$('#footer').hidden=true;$('#hud').hidden=false;$('#pause').hidden=false;$('#controls').hidden=false;$('#weather').hidden=true;makeControls();toast(mode==='local'?'Player 1 above · Player 2 below':'Build space, then tap in the air — up to '+stage.maxJumps+' jumps.');}
-let gestureGuideSeen=false,landscapeRequested=false;
+function start(){if(mode==='online'&&window.onlineNet&&!window.onlineNet.active){window.onlineNet.open();return;}selectedLevel=mode==='online'?E.level(selectedLevel).id:Math.min(store.unlocked,Math.max(1,selectedLevel));const stage=E.level(selectedLevel);setSky(stage.theme);seed=stage.seed;dialog.close();state='playing';falls=[];time=0;deathTime=0;acc=0;hudClock=0;last=performance.now();S.init();S.reset();S.play('quake');players=[E.player(character,selectedLevel)];if(['local','online'].includes(mode))players.push(E.player(character,selectedLevel));$('#menu').hidden=true;$('#footer').hidden=true;$('#hud').hidden=false;$('#pause').hidden=false;$('#controls').hidden=false;$('#weather').hidden=true;makeControls();if(selectedLevel!==1||mode==='local')toast(mode==='local'?'Player 1 above · Player 2 below':'Build space, then tap in the air — up to '+stage.maxJumps+' jumps.');}
+let landscapeRequested=false;
 function gestureGuide(begin=false){
  modal('<div class="eyebrow">YOUR FIRST CROSSING</div><h2>Find your rhythm.</h2><div class="gestureGuide"><section><div class="gestureDemo swipeUp" aria-hidden="true"><span>↑</span><i></i></div><b>Jump</b><p>Swipe up or tap.<br>Tap again in the air — up to 3 jumps.</p></section><section><div class="gestureDemo swipeDown" aria-hidden="true"><span>↓</span><i></i></div><b>Slide</b><p>Swipe down.<br>Duck under the tall barriers.</p></section><section><div class="gestureDemo holdDemo" aria-hidden="true"><span>↠</span><i></i></div><b>Sprint</b><p>Touch and hold.<br>Release to slow down and restore the flame.</p></section></div><p class="guideNote">Use the open play area or the character buttons. With two players, each uses their own half of the screen.</p><button id="guideContinue" class="primary">'+(begin?'Begin level 1 ↗':'Got it')+'</button>');
- $('#guideContinue').onclick=()=>{gestureGuideSeen=true;dialog.close();if(begin)start();};
+ $('#guideContinue').onclick=()=>{dialog.close();if(begin)start();};
 }
-$('#start').onclick=()=>{if(selectedLevel===1&&!gestureGuideSeen&&mode!=='online')gestureGuide(true);else start();};
+$('#start').onclick=start;
 $('#gestureHelp').onclick=()=>gestureGuide(false);
 $('#landscape').onclick=()=>{
  if(window.vaviAndroid){landscapeRequested=!landscapeRequested;window.location.href=landscapeRequested?'vavi://landscape':'vavi://auto';$('#landscape').textContent=landscapeRequested?'Auto rotate ↻':'▱ Landscape ↻';}
  else toast('Turn your phone sideways with auto-rotate on. Both orientations work.');
 };
+function updateGestureCue(){
+ const el=$('#gestureCue'),p=players[0];
+ let action='',label='',detail='';
+ if(state==='playing'&&selectedLevel===1&&mode!=='online'&&p&&p.alive&&!p.completed){
+  const speed=p.y>0?64:(p.sprint?E.travelers[p.character].sprint:E.travelers[p.character].pace);
+  const next=E.obstacles(seed,p.x,p.x+speed*.35,1).find(o=>['gap','rope','beam'].includes(o.type));
+  if(next){
+   action=next.type==='beam'?'swipeDown':'swipeUp';
+   label=next.type==='beam'?'Swipe down · Slide':'Swipe up · Jump';
+   detail=next.jumpsRequired>1?'Tap again in the air · '+next.jumpsRequired+' jumps':'';
+   if(next.type==='beam'&&p.slide>0)action='';
+   if(next.type!=='beam'&&p.y>0&&next.jumpsRequired<=1)action='';
+  }else if(p.x-p.edge<65&&!p.sprint&&p.flame>35){
+   action='holdDemo';label='Touch and hold · Sprint';
+  }
+ }
+ const key=action+'|'+label+'|'+detail+'|'+mode;
+ el.hidden=!action;
+ if(el.dataset.cue!==key){
+  el.dataset.cue=key;
+  el.innerHTML=action?'<div class="gestureDemo '+action+'" aria-hidden="true"><span>'+(action==='swipeUp'?'↑':action==='swipeDown'?'↓':'↠')+'</span><i></i></div><span>'+(mode==='local'?'P1 · ':'')+label+(detail?'<small>'+detail+'</small>':'')+'</span>':'';
+ }
+ el.style.top=mode==='local'?'17%':'29%';
+}
 function home(){if(window.onlineNet)window.onlineNet.stop();if(mode==='online')mode='solo';state='menu';clearInputs();dialog.close();$('#menu').hidden=false;$('#footer').hidden=false;$('#hud').hidden=true;$('#pause').hidden=true;$('#controls').hidden=true;document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('selected',b.dataset.mode===mode));updateMenu();}
 $('#brand').onclick=e=>{e.preventDefault();if(state==='playing')pause();else home();};
 function pause(){if(state!=='playing')return;clearInputs();if(mode==='online'){toast('Live races keep moving.');return;}state='paused';modal('<div class="eyebrow">TAKE A BREATH</div><h2>The sky can wait.</h2><p>Tap again in the air for up to '+E.level(selectedLevel).maxJumps+' jumps.<br>Space / ↑: jump · Shift / →: sprint · ↓: slide.<br>Player 2: W jump · D sprint · S slide.</p><button id="resume" class="primary">Keep going ↗</button><button id="exit" class="secondary">Back to the sky</button>');$('#resume').onclick=resume;$('#exit').onclick=home;}
@@ -133,7 +157,7 @@ function bridge(p,base,viewheight,index,previewMode=false){const unit=previewMod
  if(!previewMode&&!p.alive)drawFall(p,base,unit,anchor,index);
  ctx.restore();}
 
-function draw(){ctx.setTransform(dpr,0,0,dpr,0,0);background(time);if(state==='menu'){const p=E.player(character,selectedLevel);p.x=preview;bridge(p,H*(W<700?.8:.65),H,0,true);}else{players.forEach((p,i)=>bridge(p,['local','online'].includes(mode)?H*(i===0?.35:.79):H*.65,H,i));if(['local','online'].includes(mode))line(W*.05,H*.5,W*.95,H*.5,'#45664b35');if(hudClock<=0){hudClock=.1;$('#hud').innerHTML=players.map((p,i)=>{const stage=E.level(p.level),lead=Math.max(0,Math.floor(p.x-p.edge));return '<div class="stat"><span class="travelerName">'+(['local','online'].includes(mode)?'P'+(i+1)+' ':'')+E.travelers[p.character].name+':</span><span class="hudLevel">Level '+p.level+' / 25</span><span class="hudDistance">'+Math.floor(p.x)+' / '+stage.length+' m</span><span class="scorePoints">'+Math.floor(p.x+p.score)+' points</span></div>';}).join('');}}}
+function draw(){updateGestureCue();ctx.setTransform(dpr,0,0,dpr,0,0);background(time);if(state==='menu'){const p=E.player(character,selectedLevel);p.x=preview;bridge(p,H*(W<700?.8:.65),H,0,true);}else{players.forEach((p,i)=>bridge(p,['local','online'].includes(mode)?H*(i===0?.35:.79):H*.65,H,i));if(['local','online'].includes(mode))line(W*.05,H*.5,W*.95,H*.5,'#45664b35');if(hudClock<=0){hudClock=.1;$('#hud').innerHTML=players.map((p,i)=>{const stage=E.level(p.level),lead=Math.max(0,Math.floor(p.x-p.edge));return '<div class="stat"><span class="travelerName">'+(['local','online'].includes(mode)?'P'+(i+1)+' ':'')+E.travelers[p.character].name+':</span><span class="hudLevel">Level '+p.level+' / 25</span><span class="hudDistance">'+Math.floor(p.x)+' / '+stage.length+' m</span><span class="scorePoints">'+Math.floor(p.x+p.score)+' points</span></div>';}).join('');}}}
 function frame(now){let dt=Math.min((now-last)/1000||0,.1);last=now;hudClock-=dt;if(state==='playing'){acc+=dt;while(acc>=1/60&&state==='playing'){update(1/60);acc-=1/60;}}else if(state==='menu'){time+=dt;preview+=dt*9;}else if(state==='ending'){deathTime+=dt;if(deathTime>=(players.some(p=>!p.alive)?2.7:1.5))results();}if(state==='playing'||state==='ending')advanceFalls(dt);draw();requestAnimationFrame(frame);}resize();requestAnimationFrame(frame);
 
 function gateway(x,y,t,complete,scale=1,title='A light found'){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);const glow=ctx.createRadialGradient(0,-68,6,0,-68,100);glow.addColorStop(0,complete?'#ffedac99':'#e9ddb744');glow.addColorStop(1,'#ffedac00');ctx.fillStyle=glow;ctx.fillRect(-110,-175,220,190);for(const side of [-1,1]){ctx.fillStyle='#536956';ctx.fillRect(side*49-6,-115,12,130);ctx.fillStyle='#a6ad80';ctx.fillRect(side*49-6,-115,3,130);ctx.fillStyle='#b6b28a';ctx.fillRect(side*49-10,8,20,7);lantern(side*42,-45,t,.75);}poly([[-66,-113],[-45,-128],[0,-141],[45,-128],[66,-113],[48,-117],[0,-127],[-48,-117]],'#637a61');line(-61,-112,61,-112,'#d1c695',3);line(0,-128,0,-100,'#b4ab73',2);flame(0,-85,8,t);ctx.fillStyle=sky==='night'?'#f1e9c5':'#365547';ctx.font='italic 16px Georgia';ctx.textAlign='center';ctx.fillText(title,0,-156);for(let i=0;i<9;i++){const px=Math.sin(i*2.4+t*.3)*37,py=-25-((i*17+t*13)%85);ellipse(px,py,1.2,1.2,'#e5ce83');}ctx.restore();}

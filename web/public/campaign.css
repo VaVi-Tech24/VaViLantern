@@ -183,3 +183,11 @@ header:has(#hud:not([hidden])){top:max(5px,env(safe-area-inset-top))}
 @keyframes holdDemo{0%,100%{box-shadow:0 0 0 0 #d7aa5a40}60%{box-shadow:0 0 0 12px #d7aa5a10}}
 @media(max-width:500px){.gestureGuide{gap:8px}.gestureGuide p{font-size:12px}.gestureGuide b{font-size:15px}.playOptions{gap:15px;margin-top:6px}}
 @media(prefers-reduced-motion:reduce){.gestureDemo i{animation:none}}
+/* Contextual level-one gestures stay clear of the runner and accept no touches. */
+#gestureCue {position:fixed;left:50%;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:12px;pointer-events:none;color:#24493e;font:italic 17px Georgia,serif;text-shadow:0 1px 5px #f2eedb;white-space:nowrap}
+#gestureCue[hidden] {display:none}
+#gestureCue .gestureDemo {flex:none;margin:0;width:50px;height:66px;border:0;background:none}
+#gestureCue .gestureDemo i {left:17px}
+#gestureCue small {display:block;margin-top:5px;font:12px sans-serif}
+.night #gestureCue {color:#edf0df;text-shadow:0 1px 5px #172f38}
+@media(max-width:500px){#gestureCue{font-size:15px;gap:4px}}

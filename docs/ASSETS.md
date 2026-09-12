@@ -9,3 +9,5 @@ Jonah is based on the supplied reference (`web/public/jonah-reference.jpg`) and 
 Scenery, other travelers, flames, fireballs and bridges are drawn in Canvas. Audio is synthesized in `sound.js`; there is no external music file. The game is not claimed to use exclusively human-made art.
 
 No standalone asset license or open-source software license has been selected. Verify ownership and permitted use of supplied/generated artwork before distributing it under a reuse license.
+
+Build 29 recomposes the launcher artwork: Jonah, the torch and the company badge are centered for adaptive masks, with landscape extending to every edge. The in-game company logo is unchanged.

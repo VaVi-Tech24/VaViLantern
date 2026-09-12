@@ -6,7 +6,7 @@ android {
         applicationId 'com.vavitech.lantern'
         minSdk 26
         targetSdk 36
-        versionCode 28
+        versionCode 29
         versionName '1.0.0'
     }
     sourceSets { main { assets.srcDirs = ['../web/public'] } }
