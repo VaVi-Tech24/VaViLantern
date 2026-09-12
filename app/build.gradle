@@ -1,12 +1,12 @@
 plugins { id 'com.android.application' }
 android {
-    namespace 'com.vavitech.lantern'
+    namespace 'com.vavitech24.lantern'
     compileSdk 36
     defaultConfig {
-        applicationId 'com.vavitech.lantern'
+        applicationId 'com.vavitech24.lantern'
         minSdk 26
         targetSdk 36
-        versionCode 30
+        versionCode 31
         versionName '1.0.0'
     }
     sourceSets { main { assets.srcDirs = ['../web/public'] } }

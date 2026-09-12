@@ -1,14 +1,14 @@
 # Android releases
 
-## Latest: 1.0.0 build 30
+## Latest: 1.0.0 build 31
 
-Publisher branding is **VaViTech24** throughout the game and documentation. This build packages the latest game, including the Dawn → Dusk → Night level cycle. The application ID remains `com.vavitech.lantern`, minimum SDK 26 and target SDK 36.
+Publisher branding is **VaViTech24** throughout the game and documentation. This build packages the latest game, including the Dawn → Dusk → Night level cycle. The application ID is `com.vavitech24.lantern`, minimum SDK 26 and target SDK 36.
 
-Download the APK from [build 30](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build30). Build 30 shows the first jump cue about three seconds ahead, gives earlier slide guidance, and bolds Landscape and How to play on the home screen. Level 1 starts immediately and shows contextual animated jump, slide and sprint cues during play. The VaViTech24 in-game logo, optional How to play guide and landscape option remain available. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
+Download the APK from [build 31](https://github.com/VaVi-Tech24/VaViLantern/releases/tag/v1.0.0-build31). Build 31 adopts the new application ID and retains the tested gameplay. It shows the first jump cue about three seconds ahead, gives earlier slide guidance, and bolds Landscape and How to play on the home screen. Level 1 starts immediately and shows contextual animated jump, slide and sprint cues during play. The VaViTech24 in-game logo, optional How to play guide and landscape option remain available. It is development-signed for device testing, not a production Play Store release. The release includes a SHA-256 checksum. Earlier release assets retain their original contents and provenance.
 
 ## Original version 1.0.0 release
 
-VersionName/package version: **1.0.0**. Android versionCode: **23**. Application ID: **com.vavitech.lantern**. Minimum Android API: **26**.
+VersionName/package version: **1.0.0**. Android versionCode: **23**. Minimum Android API: **26**.
 
 The release keeps the tested gameplay and latest supplied logo, Pranay name and copyright footer. It adds an organized shared web source folder, complete Android project and current documentation. Only the latest requested version is intended for GitHub upload; older local APKs/AABs are not included.
 
@@ -38,3 +38,7 @@ Increment Android versionCode every time an Android update is distributed. Align
 The version 1.0.0 APK reports versionCode 23, minimum SDK 26 and target SDK 36. Its development signature verifies, and all packaged game assets match the shared source. The AAB is deliberately unsigned. Campaign, UI, audio and HTTP tests passed, and the playability controller completed all 150 character/level combinations. Physical-device/store certification is not implied.
 
 See [recorded SHA-256 hashes](SHA256SUMS-1.0.0.txt).
+
+## Build 31 identity change
+
+Android treats build 31 as a separate app from earlier releases because its application ID changed. Existing installations and local progress are not automatically replaced or migrated. Earlier release APKs retain their original identifiers.

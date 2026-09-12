@@ -28,7 +28,7 @@ Before production: deploy TLS, confirm origins, back up scores, test file permis
 
 ## Android
 
-Application ID is `com.vavitech.lantern`; minimum API 26, target/compile API 36, Java 17, Gradle 8.13 and AGP 8.13.2. The manifest supports both orientations using `fullUser` and disables Android backup. The browser game is packaged in the APK and loaded through a virtual HTTPS origin.
+Application ID is `com.vavitech24.lantern`; minimum API 26, target/compile API 36, Java 17, Gradle 8.13 and AGP 8.13.2. The manifest supports both orientations using `fullUser` and disables Android backup. The browser game is packaged in the APK and loaded through a virtual HTTPS origin.
 
 Debug output: `app/build/outputs/apk/debug/app-debug.apk`.
 Release bundle: `app/build/outputs/bundle/release/app-release.aab`.

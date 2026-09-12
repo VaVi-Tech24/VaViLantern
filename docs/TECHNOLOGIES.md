@@ -9,7 +9,7 @@
 | Sound | Web Audio API | Oscillators, noise, envelopes and lifecycle-aware effects |
 | Local persistence | Web Storage localStorage | Device/origin-specific settings, levels and records |
 | Android shell | Java 17 and Android System WebView | Packaged web game, virtual HTTPS assets and lifecycle |
-| Android package | com.vavitech.lantern | App identifier; API 26 minimum, SDK 36 target/compile |
+| Android package | com.vavitech24.lantern | App identifier; API 26 minimum, SDK 36 target/compile |
 | Android build | Gradle 8.13 and AGP 8.13.2 | Debug APK and unsigned release AAB |
 | Server | Node.js 22 LTS, built-in HTTP/crypto/fs | Optional rooms, authoritative simulation and static files |
 | Networking | JSON over HTTP(S), polling around 10 Hz | Input updates and server snapshots |

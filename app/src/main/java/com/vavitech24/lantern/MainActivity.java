@@ -1,4 +1,4 @@
-package com.vavitech.lantern;
+package com.vavitech24.lantern;
 
 import android.app.Activity;
 import android.os.Bundle;

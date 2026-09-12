@@ -6,7 +6,7 @@ VaVi Lantern is a WebView-based Android game. The Android layer is written in Ja
 
 | Path | Responsibility |
 |---|---|
-| `app/src/main/java/com/vavitech/lantern/MainActivity.java` | Creates WebView, serves bundled assets, handles lifecycle, Back and orientation requests |
+| `app/src/main/java/com/vavitech24/lantern/MainActivity.java` | Creates WebView, serves bundled assets, handles lifecycle, Back and orientation requests |
 | `app/src/main/AndroidManifest.xml` | Android application, activity and permissions |
 | `app/src/main/res/` | Launcher artwork, adaptive icon, colors and styles |
 | `app/build.gradle` | Android version, SDK settings and shared asset inclusion |

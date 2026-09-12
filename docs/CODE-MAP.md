@@ -16,7 +16,7 @@ Paths are relative to the repository root. Search the function names below; many
 | `web/public/vavi-tech-logo.png` | Supplied VaViTech24 logo | Header |
 | `web/public/cosmic-lantern.png` | Earlier brand asset | Preserved artwork |
 | `assets/` | Original/reference images | Some references are not deployed |
-| `app/src/main/java/com/vavitech/lantern/MainActivity.java` | Android asset interception and lifecycle | `onCreate`, `shouldInterceptRequest`, `onPause`, `onResume`, `onBackPressed` |
+| `app/src/main/java/com/vavitech24/lantern/MainActivity.java` | Android asset interception and lifecycle | `onCreate`, `shouldInterceptRequest`, `onPause`, `onResume`, `onBackPressed` |
 | `app/src/main/AndroidManifest.xml` | Package settings and permissions | `INTERNET`, `fullUser`, backup disabled |
 | `app/src/main/res/` | Android icon and theme | `drawable`, `values` |
 | `app/build.gradle` | SDKs, version and shared web asset sourceSet | `versionCode`, `versionName` |

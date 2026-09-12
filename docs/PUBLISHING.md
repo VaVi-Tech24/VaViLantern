@@ -6,7 +6,7 @@ GitHub distribution and Google Play publication are separate. Version 1.0.0 is c
 
 ### September 2026 preparation
 
-The latest Android source uses versionName **1.0.0**, versionCode **25**, and packages the current website assets, including the Dawn → Dusk → Night level cycle. The application ID remains `com.vavitech.lantern`. A locally built debug APK is for device testing; an unsigned release AAB must be upload-key signed before Play submission. Do not overwrite an older published binary or assume its signature is suitable for production.
+The latest Android source uses versionName **1.0.0**, versionCode **31**, and packages the current website assets, including the Dawn → Dusk → Night level cycle. The application ID is `com.vavitech24.lantern`. A locally built debug APK is for device testing; an unsigned release AAB must be upload-key signed before Play submission. Do not overwrite an older published binary or assume its signature is suitable for production.
 
 The owner has not yet registered a Play Console account. The next steps are:
 
@@ -25,7 +25,7 @@ The app uses Java and bundled web assets without declared native libraries. Conf
 ### Android Studio signing
 
 1. Open the repository in Android Studio and configure JDK 17 and SDK 36.
-2. Confirm `com.vavitech.lantern` is the intended permanent application ID.
+2. Confirm `com.vavitech24.lantern` is the intended permanent application ID.
 3. Use Build → Generate Signed App Bundle / APK → Android App Bundle.
 4. Select or create your own upload key, keep secure backups, and never commit it or its passwords.
 5. Configure Play App Signing and follow the current instructions in Console.
