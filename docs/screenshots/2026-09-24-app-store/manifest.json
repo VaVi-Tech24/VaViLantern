@@ -1,0 +1,100 @@
+[
+  {
+    "file": "iphone/01-home-portrait.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.07.31 PM.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "09b428334d66eeab44cbed5b97382e0b1338ca0ffa3392f501bd498be0abf654"
+  },
+  {
+    "file": "iphone/02-jump-guidance-landscape.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.09.19 PM.png",
+    "width": 2868,
+    "height": 1320,
+    "sha256": "1e48f9865ee8d2d8a3427f059ca6ecdda5efe2691b13c16a6a4b8fd88da954d2"
+  },
+  {
+    "file": "iphone/03-slide-barrier-dusk-landscape.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.10.17 PM.png",
+    "width": 2868,
+    "height": 1320,
+    "sha256": "d221583bd99874491bf706a2f81b4a97901954778e1c6fd8ac161809422a0bed"
+  },
+  {
+    "file": "iphone/04-travelers-portrait.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.08.45 PM.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "4d7e09ef85420ea1e667b6549d541a401b13e893e36554bdb7c797ff8398e851"
+  },
+  {
+    "file": "iphone/05-flame-restored-landscape.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.10.25 PM.png",
+    "width": 2868,
+    "height": 1320,
+    "sha256": "8d11421a42bd1d83b01d040244596a74bd5d2946f6bc06621b3cc08979fbfecb"
+  },
+  {
+    "file": "iphone/06-levels-portrait.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.08.53 PM.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "ece73087d7aa8626994bbd69f8e1c082e51d6e6b61877be275f9791652a5b677"
+  },
+  {
+    "file": "iphone/07-slide-guidance-portrait.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.08.24 PM.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "3f493a13c6cf7f52c12fa816ae74fc86b7d40256d673b26b9f137254c3574005"
+  },
+  {
+    "file": "iphone/08-jump-guidance-portrait.png",
+    "original": "Screenshot iPhone 18 Pro Max 2026-09-24 at 11.08.03 PM.png",
+    "width": 1320,
+    "height": 2868,
+    "sha256": "baf8286603676aa9450c2a54b0efa8563de62162b369b1fd80ceef8ddaa9ed3d"
+  },
+  {
+    "file": "ipad/01-home-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.12.11 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "534a23ff4c1c365aa7267eb83121870051129c2f79b4210df4aea56b89ef5824"
+  },
+  {
+    "file": "ipad/02-jump-guidance-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.12.19 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "03be1163ccc2ef2465d88620da372977da8f4aef7aa34146bb1140cae318cd09"
+  },
+  {
+    "file": "ipad/03-dusk-crossing-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.14.01 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "78aadb57e350256cfd38850e737ec1f8e92d5ecc25d789189b86611b71c9400d"
+  },
+  {
+    "file": "ipad/04-travelers-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.14.21 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "2a70516147a71bd4e388ad37f5cc854630fbaba49f84c7051132ed120db7906c"
+  },
+  {
+    "file": "ipad/05-levels-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.14.25 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "230e89f4133cef48456c6bea3a6f10240ca66645de6003c286d62b2d1f34e972"
+  },
+  {
+    "file": "ipad/06-night-home-portrait.png",
+    "original": "Screenshot iPad Pro 13-inch (M5) 2026-09-24 at 11.14.14 PM.png",
+    "width": 2064,
+    "height": 2752,
+    "sha256": "27d90106f1c000d7edba2482c40444c05436a04c655881026b7f3dbf226daaa8"
+  }
+]
